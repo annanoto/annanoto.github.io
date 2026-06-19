@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anna Noto — Engineer & Maker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f4f1ea;
+  --bg2:#edeae1;
+  --bg3:#e5e1d6;
+  --ink:#1a1814;
+  --ink2:#47443c;
+  --ink3:#8c8980;
+  --teal:#0f6e56;
+  --teal2:#1d9e75;
+  --teal3:#e1f5ee;
+  --amber:#854f0b;
+  --amber2:#faeeda;
+  --coral:#993c1d;
+  --coral2:#faece7;
+  --rule:#d5d1c6;
+  --serif:'DM Serif Display',serif;
+  --sans:'DM Sans',sans-serif;
+  --mono:'DM Mono',monospace;
+  --r:4px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:16px;line-height:1.6;font-weight:300}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(244,241,234,0.95);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--rule);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 3rem;height:58px;
+}
+.logo{font-family:var(--serif);font-size:20px;color:var(--ink);letter-spacing:-0.01em}
+.logo em{font-style:italic;color:var(--teal)}
+.nav-r{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);transition:color .15s}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{
+  font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+  padding:8px 18px;border:1.5px solid var(--ink);border-radius:var(--r);
+  color:var(--ink);background:transparent;cursor:pointer;transition:all .15s;
+}
+.nav-cta:hover{background:var(--ink);color:var(--bg)}
+
+/* ── HERO ── */
+.hero{
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:calc(100vh - 58px);
+  max-width:1400px;margin:0 auto;
+}
+.hero-left{
+  padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center;
+  border-right:1px solid var(--rule);
+}
+.hero-kicker{
+  display:flex;align-items:center;gap:10px;margin-bottom:2rem;
+}
+.hero-kicker span{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal)}
+.kicker-dot{width:6px;height:6px;border-radius:50%;background:var(--teal2);flex-shrink:0}
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(3.2rem,5vw,5.5rem);
+  line-height:1.0;letter-spacing:-0.025em;
+  margin-bottom:2rem;
+}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero-desc{font-size:1.05rem;color:var(--ink2);line-height:1.8;max-width:460px;margin-bottom:2.5rem}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:3rem}
+.pill{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.06em;
+  padding:5px 12px;border-radius:20px;
+  border:1px solid var(--rule);background:var(--bg2);color:var(--ink2);
+}
+.pill.teal{background:var(--teal3);border-color:#9fe1cb;color:#085041}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:var(--r);
+  font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+  transition:all .18s;border:1.5px solid transparent;cursor:pointer;
+}
+.btn-dark{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn-dark:hover{background:var(--teal);border-color:var(--teal)}
+.btn-line{background:transparent;color:var(--ink);border-color:var(--rule)}
+.btn-line:hover{border-color:var(--ink2)}
+
+/* hero right: splash grid */
+.hero-gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-template-rows:1fr 1fr 1fr;
+  height:calc(100vh - 58px);
+  gap:3px;background:var(--rule);
+}
+.hg{background:var(--bg3);overflow:hidden;position:relative;cursor:pointer}
+.hg:hover .hg-overlay{opacity:1}
+.hg-overlay{
+  position:absolute;inset:0;
+  background:rgba(26,24,20,0.72);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:14px;opacity:0;transition:opacity .2s;
+}
+.hg-label{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(244,241,234,0.9)}
+.hg-name{font-family:var(--serif);font-size:14px;color:#f4f1ea;line-height:1.2;margin-top:3px}
+.hg span.placeholder{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:10px;letter-spacing:0.06em;color:var(--ink3);
+  text-transform:uppercase;padding:12px;text-align:center;line-height:1.5;
+}
+/* grid layout for the 9 cells */
+.hg:nth-child(1){grid-column:1/3;grid-row:1/2}
+.hg:nth-child(2){grid-column:3;grid-row:1/3}
+.hg:nth-child(3){grid-column:1;grid-row:2/3}
+.hg:nth-child(4){grid-column:2;grid-row:2/3}
+.hg:nth-child(5){grid-column:1/2;grid-row:3/4}
+.hg:nth-child(6){grid-column:2/3;grid-row:3/4}
+.hg:nth-child(7){grid-column:3;grid-row:3/4}
+
+/* color swatches for empty placeholders */
+.c1{background:#d4c9b4}
+.c2{background:#b8c9c1}
+.c3{background:#ccc4b0}
+.c4{background:#c5b9a6}
+.c5{background:#bdc8be}
+.c6{background:#d0c4af}
+.c7{background:#c8bfad}
+
+/* ── SECTION SHELL ── */
+.section{max-width:1400px;margin:0 auto;padding:6rem 3rem}
+.full-rule{border:none;border-top:1px solid var(--rule);max-width:100%}
+.s-head{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:4rem}
+.s-num{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);white-space:nowrap}
+.s-title{font-family:var(--serif);font-size:2.6rem;color:var(--ink);letter-spacing:-0.02em;line-height:1}
+.s-title em{font-style:italic;color:var(--teal)}
+.s-line{flex:1;height:1px;background:var(--rule)}
+
+/* ── FILTER BAR ── */
+.filter-bar{
+  display:flex;gap:8px;flex-wrap:wrap;margin-bottom:3rem;
+  padding-bottom:2rem;border-bottom:1px solid var(--rule);
+}
+.filter-btn{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;
+  padding:7px 16px;border-radius:20px;
+  border:1px solid var(--rule);background:transparent;color:var(--ink3);
+  cursor:pointer;transition:all .15s;
+}
+.filter-btn:hover{border-color:var(--ink2);color:var(--ink)}
+.filter-btn.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* ── PROJECT CARDS ── */
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+  gap:2px;background:var(--rule);
+}
+.pcard{
+  background:var(--bg);padding:2rem;
+  display:flex;flex-direction:column;gap:1rem;
+  transition:background .2s;
+  cursor:default;
+}
+.pcard:hover{background:#f0ece2}
+.pcard[data-link]:hover{cursor:pointer}
+.pcard-img{
+  width:100%;aspect-ratio:4/3;background:var(--bg3);
+  overflow:hidden;position:relative;margin-bottom:0.25rem;
+  flex-shrink:0;
+}
+.pcard-img span{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:10px;letter-spacing:0.06em;
+  color:var(--ink3);text-transform:uppercase;padding:1rem;text-align:center;line-height:1.6;
+}
+.pcard-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.pcard-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:0.25rem}
+.badge{
+  font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;
+  padding:3px 9px;border-radius:3px;
+}
+.badge-eng{background:var(--teal3);color:#085041}
+.badge-make{background:var(--amber2);color:#412402}
+.badge-art{background:var(--coral2);color:#4a1b0c}
+.pcard-num{font-family:var(--mono);font-size:11px;color:var(--ink3)}
+.pcard-title{font-family:var(--serif);font-size:1.2rem;color:var(--ink);line-height:1.25;letter-spacing:-0.01em}
+.pcard-sub{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--teal);margin-top:2px}
+.pcard-desc{font-size:0.875rem;color:var(--ink2);line-height:1.7;flex:1}
+.pcard-tools{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;padding-top:0.75rem;border-top:1px solid var(--rule)}
+.tool{
+  font-family:var(--mono);font-size:9px;padding:2px 8px;border-radius:2px;
+  background:var(--bg2);color:var(--ink3);border:1px solid var(--rule);
+  letter-spacing:0.04em;
+}
+.pcard-link{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:var(--mono);font-size:10px;letter-spacing:0.07em;text-transform:uppercase;
+  color:var(--teal);padding-top:0.5rem;transition:gap .15s;
+}
+.pcard-link:hover{gap:9px}
+.hidden{display:none!important}
+
+/* ── ABOUT / SPLIT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);border-radius:var(--r)}
+.about-left{padding:3.5rem;border-right:1px solid var(--rule)}
+.about-right{padding:3.5rem;background:var(--bg2)}
+.about-pull{font-family:var(--serif);font-size:2rem;line-height:1.2;letter-spacing:-0.02em;color:var(--ink);margin-bottom:1.5rem}
+.about-pull em{font-style:italic;color:var(--teal)}
+.about-body p{font-size:0.95rem;color:var(--ink2);line-height:1.8;margin-bottom:1rem}
+.about-body p:last-child{margin-bottom:0}
+.sidebar-block{margin-bottom:2rem}
+.sidebar-block:last-child{margin-bottom:0}
+.sbl{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.6rem;padding-bottom:0.5rem;border-bottom:1px solid var(--rule)}
+.sbl-list{list-style:none;display:flex;flex-direction:column;gap:0.3rem}
+.sbl-list li{font-size:0.875rem;color:var(--ink2);padding-left:1rem;position:relative;line-height:1.5}
+.sbl-list li::before{content:'·';position:absolute;left:0;color:var(--teal2)}
+
+/* ── TESTIMONIALS ── */
+.testimonials{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule)}
+.tcard{background:var(--ink);padding:2.5rem}
+.tcard-text{
+  font-family:var(--serif);font-style:italic;font-size:1.1rem;
+  line-height:1.65;color:rgba(244,241,234,0.88);margin-bottom:1.5rem;
+}
+.tcard-author{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal2)}
+
+/* ── CONTACT ── */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.contact-h{font-family:var(--serif);font-size:3rem;line-height:1.05;letter-spacing:-0.025em;margin-bottom:1.5rem}
+.contact-h em{font-style:italic;color:var(--teal)}
+.contact-body{font-size:1rem;color:var(--ink2);line-height:1.8;margin-bottom:2.5rem}
+.contact-links{display:flex;flex-direction:column;gap:8px}
+.clink{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 18px;border:1px solid var(--rule);border-radius:var(--r);
+  background:var(--bg2);transition:all .15s;
+}
+.clink:hover{border-color:var(--teal);background:var(--teal3)}
+.clink-l{}
+.clink-type{font-family:var(--mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:2px}
+.clink-val{font-size:0.9rem;color:var(--ink)}
+.clink-arr{font-size:18px;color:var(--teal)}
+.contact-sidebar{background:var(--bg2);border:1px solid var(--rule);border-radius:var(--r);padding:2rem}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--rule);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
+footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(--ink3)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr}
+  .hero-gallery{height:60vw;grid-template-rows:1fr 1fr}
+  .about-grid,.contact-wrap,.testimonials{grid-template-columns:1fr}
+  .about-left{border-right:none;border-bottom:1px solid var(--rule)}
+}
+@media(max-width:700px){
+  nav{padding:0 1.5rem}
+  .nav-links,.nav-cta{display:none}
+  .hero-left{padding:3rem 1.5rem}
+  .section{padding:4rem 1.5rem}
+  .projects-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">Anna <em>Noto</em></a>
+  <div class="nav-r">
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="mailto:anoto421@gmail.com" class="nav-cta">Hire me</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-kicker">
+      <div class="kicker-dot"></div>
+      <span>Computer Engineer · Maker · Class of 2026</span>
+    </div>
+    <h1>I build.<br>I make.<br>I <em>document.</em></h1>
+    <p class="hero-desc">
+      Embedded systems, laser-cut wood boxes, network security research, cardboard boats, 
+      Raspberry Pi alarms, embroidered jackets — I work across every medium the makerspace 
+      has to offer. Whatever the problem, I'll prototype it.
+    </p>
+    <div class="hero-pills">
+      <span class="pill teal">Raspberry Pi</span>
+      <span class="pill teal">Python</span>
+      <span class="pill teal">HUB75 RGB</span>
+      <span class="pill">3D printing & CAD</span>
+      <span class="pill">Laser cutting</span>
+      <span class="pill">Sheet metal & plasma</span>
+      <span class="pill">CNC router</span>
+      <span class="pill">Embroidery machine</span>
+      <span class="pill">FPGA</span>
+      <span class="pill">Pen testing</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#work" class="btn btn-dark">See all projects</a>
+      <a href="https://github.com/annanoto" target="_blank" class="btn btn-line">GitHub</a>
+      <a href="https://www.linkedin.com/in/anna-noto-042102" target="_blank" class="btn btn-line">LinkedIn</a>
+    </div>
+  </div>
+
+  <!-- SPLASH GALLERY — replace background-color with background-image:url(...) on each .hg -->
+  <div class="hero-gallery">
+    <div class="hg c1">
+      <span class="placeholder">Add photo: M.I.N.D. LED display in makerspace</span>
+      <div class="hg-overlay">
+        <span class="hg-label">Engineering · Capstone</span>
+        <span class="hg-name">M.I.N.D. LED Display</span>
+      </div>
+    </div>
+    <div class="hg c2">
+      <span class="placeholder">Add photo: Travel treasures box with living hinges</span>
+      <div class="hg-overlay">
+        <span class="hg-label">Laser cut · Wood</span>
+        <span class="hg-name">Travel Treasures Box</span>
+      </div>
+    </div>
+    <div class="hg c3">
+      <span class="placeholder">Add photo: NY Liberty embroidered jacket</span>
+      <div class="hg-overlay">
+        <span class="hg-label">Embroidery · Vinyl</span>
+        <span class="hg-name">NY Liberty Jacket</span>
+      </div>
+    </div>
+    <div class="hg c4">
+      <span class="placeholder">Add photo: Elephant tray</span>
+      <div class="hg-overlay">
+        <span class="hg-label">CNC · Woodshop</span>
+        <span class="hg-name">Elephant Tray</span>
+      </div>
+    </div>
+    <div class="hg c5">
+      <span class="placeholder">Add photo: Humidifier stool</span>
+      <div class="hg-overlay">
+        <span class="hg-label">Sheet metal · CAD</span>
+        <span class="hg-name">Humidifier Stool</span>
+      </div>
+    </div>
+    <div class="hg c6">
+      <span class="placeholder">Add photo: Trick-or-treat photo cutout painted</span>
+      <div class="hg-overlay">
+        <span class="hg-label">Woodshop · Paint</span>
+        <span class="hg-name">Halloween Photo Cutout</span>
+      </div>
+    </div>
+    <div class="hg c7">
+      <span class="placeholder">Add photo: cardboard boat regatta</span>
+      <div class="hg-overlay">
+        <span class="hg-label">Fabrication · Fun</span>
+        <span class="hg-name">Cardboard Boat Regatta</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="full-rule">
+
+<!-- ALL WORK -->
+<section class="section" id="work">
+  <div class="s-head">
+    <span class="s-num">All projects</span>
+    <h2 class="s-title">Engineering <em>&</em> making</h2>
+    <div class="s-line"></div>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="engineering">Engineering</button>
+    <button class="filter-btn" data-filter="makerspace">Makerspace</button>
+    <button class="filter-btn" data-filter="woodshop">Woodshop & CNC</button>
+    <button class="filter-btn" data-filter="laser">Laser & Vinyl</button>
+    <button class="filter-btn" data-filter="fabrication">Fabrication</button>
+    <button class="filter-btn" data-filter="art">Art & Design</button>
+  </div>
+
+  <div class="projects-grid" id="grid">
+
+    <!-- M.I.N.D. CAPSTONE -->
+    <div class="pcard" data-cats="engineering makerspace" data-link="https://www.linkedin.com/feed/update/urn:li:activity:7458707107421294592/">
+      <div class="pcard-img c2"><span>Add photo: LED display board lit up in makerspace</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-eng">Engineering</span><span class="badge badge-make">Makerspace</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">M.I.N.D. — Makerspace & Notification Information Display</p>
+            <p class="pcard-sub">Senior Design Capstone · 2025–26</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Permanent large-format HUB75 RGB LED board for the University of the Pacific Makerspace showing real-time shop hours, tool availability, 3D print queue, and upcoming workshops. Driven by a Raspberry Pi 3B with a Python + Google Sheets API data pipeline and offline fallback.</p>
+      <div class="pcard-tools">
+        <span class="tool">Raspberry Pi 3B</span><span class="tool">HUB75 RGB</span><span class="tool">Python</span><span class="tool">Sheets API</span><span class="tool">GPIO</span><span class="tool">PSpice</span>
+      </div>
+      <a class="pcard-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7458707107421294592/" target="_blank">Build log on LinkedIn →</a>
+    </div>
+
+    <!-- ALERTMATE -->
+    <div class="pcard" data-cats="engineering makerspace">
+      <div class="pcard-img c3"><span>Add photo: AlertMate prototype on breadboard</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-eng">Engineering</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">AlertMate Portable Security System</p>
+            <p class="pcard-sub">Design & Innovation · 2024</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Portable door/window alarm for temporary housing (dorms, Airbnbs, hotels). Raspberry Pi + reed switch detects unauthorized entry and fires an SMS alert. Mounts anywhere with Command strips — no installation required.</p>
+      <div class="pcard-tools">
+        <span class="tool">Raspberry Pi</span><span class="tool">Python</span><span class="tool">Reed switch</span><span class="tool">Breadboard</span>
+      </div>
+    </div>
+
+    <!-- DYNAMIC ROUTING -->
+    <div class="pcard" data-cats="engineering" data-link="https://github.com/LocNguyen1703/COMP177_finalproject">
+      <div class="pcard-img c5"><span>Add screenshot: network graph visualization with shortest path highlighted</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-eng">Engineering</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">Dynamic Routing in Faulty Networks</p>
+            <p class="pcard-sub">Computer Networking · 2024</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Python simulation using Dijkstra's algorithm to compute and visualize shortest paths in network graphs, adapting in real time to node/edge failures. Tested across 9, 20, and 50-node configurations with NetworkX + Matplotlib.</p>
+      <div class="pcard-tools">
+        <span class="tool">Python</span><span class="tool">NetworkX</span><span class="tool">Dijkstra's</span><span class="tool">NumPy</span><span class="tool">Matplotlib</span>
+      </div>
+      <a class="pcard-link" href="https://github.com/LocNguyen1703/COMP177_finalproject" target="_blank">View on GitHub →</a>
+    </div>
+
+    <!-- DIGITAL FORENSICS PRESENTATION -->
+    <div class="pcard" data-cats="engineering">
+      <div class="pcard-img c6"><span>Add photo: presentation slide or printed materials</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-eng">Engineering</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">Digital Evidence in Smartphones & Criminal Investigations</p>
+            <p class="pcard-sub">Research Presentation · 2024</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Research and presentation on how GPS, call records, and social media data extracted from smartphones serve as legal evidence in criminal investigations. Applied to real cases including the Idaho quadruple murder. Covered invasive vs. non-invasive forensic extraction methods.</p>
+      <div class="pcard-tools">
+        <span class="tool">Mobile forensics</span><span class="tool">Legal research</span><span class="tool">Case analysis</span>
+      </div>
+    </div>
+
+    <!-- TYPES OF EVIDENCE ACTIVITY -->
+    <div class="pcard" data-cats="engineering makerspace art">
+      <div class="pcard-img c7"><span>Add photo: physical activity materials made in the makerspace</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-eng">Engineering</span><span class="badge badge-art">Art & Design</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">Types of Evidence — Hands-On Activity</p>
+            <p class="pcard-sub">Course Project · Makerspace-Made Materials</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Designed and built all physical materials for a hands-on activity exploring types of legal evidence with emphasis on digital evidence. Materials were fabricated in the makerspace — the design side of engineering meets the legal concepts from the pre-law program.</p>
+      <div class="pcard-tools">
+        <span class="tool">Makerspace fabrication</span><span class="tool">Legal education</span><span class="tool">Adobe CC</span>
+      </div>
+    </div>
+
+    <!-- PIES -->
+    <div class="pcard" data-cats="engineering art">
+      <div class="pcard-img c1"><span>Add photo: event space, stickers, or spirit rock painting</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-eng">Engineering</span><span class="badge badge-art">Art & Design</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">Pacific Innovation & Entrepreneurship Summit</p>
+            <p class="pcard-sub">Event Marketing Lead · 2024</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Led marketing team for UoP's student-run innovation showcase. Designed stickers, flyers, and a highlight video on a $135 budget. Pivoted around social media approval delays using physical promotion in engineering buildings. Filled the event to near capacity.</p>
+      <div class="pcard-tools">
+        <span class="tool">Adobe CC</span><span class="tool">Team lead</span><span class="tool">Budget mgmt</span><span class="tool">Video editing</span>
+      </div>
+    </div>
+
+    <!-- ELEPHANT TRAY -->
+    <div class="pcard" data-cats="makerspace woodshop">
+      <div class="pcard-img c4"><span>Add photo: finished elephant tray</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">Elephant Tray</p>
+            <p class="pcard-sub">CNC Router · Woodshop</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Designed an elephant-shaped serving tray from scratch in CAD, then cut it on the CNC router. Full workflow from digital design to finished wood piece.</p>
+      <div class="pcard-tools">
+        <span class="tool">CAD</span><span class="tool">CNC router</span><span class="tool">Woodshop</span>
+      </div>
+    </div>
+
+    <!-- RACE RAMP / STEAM DAY -->
+    <div class="pcard" data-cats="makerspace woodshop">
+      <div class="pcard-img c2"><span>Add photo: race ramp + 3D printed rolling ghosts at STEAM day</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">Ghost Race Ramp — Elementary STEAM Day</p>
+            <p class="pcard-sub">Woodshop · 3D Printing · Outreach</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Built a wooden race ramp for elementary school STEAM Day, paired with 3D printed rolling ghost figures for kids to race. Designed to make physics and engineering hands-on and fun for young students.</p>
+      <div class="pcard-tools">
+        <span class="tool">Woodshop</span><span class="tool">3D printing</span><span class="tool">STEAM outreach</span>
+      </div>
+    </div>
+
+    <!-- TRICK OR TREAT CUTOUT -->
+    <div class="pcard" data-cats="makerspace woodshop art">
+      <div class="pcard-img c6"><span>Add photo: painted photo face cutout at trick-or-treat event</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-make">Makerspace</span><span class="badge badge-art">Art & Design</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">Halloween Photo Face Cutout</p>
+            <p class="pcard-sub">Woodshop · Paint · Event Prop</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Designed, cut, and hand-painted a large photo face cutout prop for a trick-or-treat event. Built in the woodshop and painted — the kind of project that shows the range of what a makerspace can do.</p>
+      <div class="pcard-tools">
+        <span class="tool">Woodshop</span><span class="tool">Painting</span><span class="tool">Event design</span>
+      </div>
+    </div>
+
+    <!-- HUMIDIFIER STOOL -->
+    <div class="pcard" data-cats="makerspace fabrication">
+      <div class="pcard-img c3"><span>Add photo: finished sheet metal humidifier stool</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">Humidifier Stool</p>
+            <p class="pcard-sub">Sheet Metal · Plasma Cutter · CAD</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Designed a small stool to elevate a humidifier. Prototyped the full design by laser cutting it in paper first, then executed in sheet metal using the plasma cutter and sheet metal tools. CAD-to-fabrication end-to-end.</p>
+      <div class="pcard-tools">
+        <span class="tool">CAD</span><span class="tool">Plasma cutter</span><span class="tool">Sheet metal</span><span class="tool">Laser cutter (proto)</span>
+      </div>
+    </div>
+
+    <!-- TRAVEL BOX -->
+    <div class="pcard" data-cats="makerspace laser">
+      <div class="pcard-img c5"><span>Add photo: travel treasures box open showing living hinges</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">Travel Treasures Box</p>
+            <p class="pcard-sub">Laser Cut · Living Hinges · Adobe Illustrator</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Laser-cut wooden box with living hinge lids for flexible, tool-free opening. Custom engraving artwork designed entirely in Adobe Illustrator. A good example of combining precise digital design with the tactile quality of wood.</p>
+      <div class="pcard-tools">
+        <span class="tool">Laser cutter</span><span class="tool">Adobe Illustrator</span><span class="tool">Living hinges</span><span class="tool">Wood engraving</span>
+      </div>
+    </div>
+
+    <!-- GRADUATION FRAME -->
+    <div class="pcard" data-cats="makerspace laser art">
+      <div class="pcard-img c1"><span>Add photo: laser-cut graduation picture frame</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-make">Makerspace</span><span class="badge badge-art">Art & Design</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">Graduation Picture Frame</p>
+            <p class="pcard-sub">Laser Cut · Original Design</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Original picture frame design created in Adobe Illustrator and cut on the laser cutter. Every element — the layout, decorative patterns, text — designed from scratch.</p>
+      <div class="pcard-tools">
+        <span class="tool">Laser cutter</span><span class="tool">Adobe Illustrator</span><span class="tool">Original design</span>
+      </div>
+    </div>
+
+    <!-- LEATHER ORNAMENTS -->
+    <div class="pcard" data-cats="makerspace laser">
+      <div class="pcard-img c7"><span>Add photo: leather holiday ornaments</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">Leather Holiday Ornaments</p>
+            <p class="pcard-sub">Laser Engraved · Leather</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Laser-cut and engraved leather holiday ornaments. Working with leather on the laser cutter requires tuned power/speed settings and an eye for material behavior — small projects that demand precision.</p>
+      <div class="pcard-tools">
+        <span class="tool">Laser cutter</span><span class="tool">Leather</span><span class="tool">Engraving</span>
+      </div>
+    </div>
+
+    <!-- SLATE COASTERS -->
+    <div class="pcard" data-cats="makerspace laser">
+      <div class="pcard-img c4"><span>Add photo: slate coasters with engraving</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">Slate Coasters</p>
+            <p class="pcard-sub">Laser Engraved · Stone</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Custom laser-engraved slate coasters. Engraving on stone requires different settings than wood or leather — part of the ongoing learning that comes with running a makerspace day-to-day.</p>
+      <div class="pcard-tools">
+        <span class="tool">Laser cutter</span><span class="tool">Stone engraving</span>
+      </div>
+    </div>
+
+    <!-- CARABINER -->
+    <div class="pcard" data-cats="makerspace laser fabrication">
+      <div class="pcard-img c2"><span>Add photo: laser-cut carabiner</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">Laser-Cut Carabiner</p>
+            <p class="pcard-sub">Laser Cut · Structural Form</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">A carabiner cut on the laser cutter — an exercise in designing a functional form with structural considerations. One of many quick-turn makerspace builds exploring what the machines can do.</p>
+      <div class="pcard-tools">
+        <span class="tool">Laser cutter</span><span class="tool">Structural design</span>
+      </div>
+    </div>
+
+    <!-- SENIOR PROJECT POLOS -->
+    <div class="pcard" data-cats="makerspace laser art">
+      <div class="pcard-img c3"><span>Add photo: embroidered senior project polo shirts</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-make">Makerspace</span><span class="badge badge-art">Art & Design</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">Senior Project Polo Shirts</p>
+            <p class="pcard-sub">Embroidery Machine</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Embroidered custom polo shirts for the senior capstone project team using the makerspace embroidery machine. Digitizing the design for embroidery requires converting artwork into stitch paths — a different kind of engineering.</p>
+      <div class="pcard-tools">
+        <span class="tool">Embroidery machine</span><span class="tool">Digitizing</span><span class="tool">Textile design</span>
+      </div>
+    </div>
+
+    <!-- CAMP OASIS EMBROIDERY -->
+    <div class="pcard" data-cats="makerspace laser art">
+      <div class="pcard-img c5"><span>Add photo: Camp Oasis embroidered logo piece</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-make">Makerspace</span><span class="badge badge-art">Art & Design</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">Camp Oasis Logo Embroidery</p>
+            <p class="pcard-sub">Embroidery Machine</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Embroidered the Camp Oasis (Crohn's & Colitis Foundation) logo — combining volunteer work with makerspace skills. Logo digitized and stitched on the embroidery machine.</p>
+      <div class="pcard-tools">
+        <span class="tool">Embroidery machine</span><span class="tool">Logo digitizing</span>
+      </div>
+    </div>
+
+    <!-- NY LIBERTY JACKET -->
+    <div class="pcard" data-cats="makerspace laser art">
+      <div class="pcard-img c6"><span>Add photo: NY Liberty jacket — front embroidery + spray-painted back</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-make">Makerspace</span><span class="badge badge-art">Art & Design</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">Custom NY Liberty Jacket</p>
+            <p class="pcard-sub">Embroidery · Vinyl Stencil · Spray Paint</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Custom WNBA NY Liberty fan jacket: embroidered front logo using the embroidery machine, hand-lettered and spray-painted back using vinyl stencils cut on the Cricut. Three different making techniques in one piece.</p>
+      <div class="pcard-tools">
+        <span class="tool">Embroidery machine</span><span class="tool">Cricut vinyl</span><span class="tool">Spray paint</span><span class="tool">Stencil design</span>
+      </div>
+    </div>
+
+    <!-- DOOR HANDLE CUP -->
+    <div class="pcard" data-cats="makerspace fabrication" data-link="https://makerworld.com/en/models/2556777-door-handle-cup-for-condiments#profileId-2816516">
+      <div class="pcard-img c7"><span>Add photo: cup clipped onto car door handle with ketchup in it</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">Door Handle Condiment Cup</p>
+            <p class="pcard-sub">3D Printed · CAD · Published on MakerWorld</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Designed a cup that clips onto the door handle inside a car to hold ketchup while eating french fries on road trips. CAD'd, printed, iterated, and published on MakerWorld — because good design solves real problems, even small ones.</p>
+      <div class="pcard-tools">
+        <span class="tool">CAD</span><span class="tool">3D printing</span><span class="tool">MakerWorld</span>
+      </div>
+      <a class="pcard-link" href="https://makerworld.com/en/models/2556777-door-handle-cup-for-condiments#profileId-2816516" target="_blank">View on MakerWorld →</a>
+    </div>
+
+    <!-- CARDBOARD BOAT -->
+    <div class="pcard" data-cats="makerspace fabrication">
+      <div class="pcard-img c1"><span>Add photo: cardboard boat at regatta — on the water or during construction</span></div>
+      <div>
+        <div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div>
+        <div class="pcard-top">
+          <div>
+            <p class="pcard-title">Cardboard Boat Regatta</p>
+            <p class="pcard-sub">Fabrication · Structural Design · Fun</p>
+          </div>
+        </div>
+      </div>
+      <p class="pcard-desc">Built and raced a cardboard boat. Structural design, material constraints, waterproofing strategy, and the very real consequences of getting it wrong. Engineering under pressure — literally.</p>
+      <div class="pcard-tools">
+        <span class="tool">Cardboard fabrication</span><span class="tool">Structural design</span><span class="tool">Waterproofing</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="full-rule">
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="s-head">
+    <span class="s-num">About</span>
+    <h2 class="s-title">Who I <em>am</em></h2>
+    <div class="s-line"></div>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-left">
+      <p class="about-pull">Hardware, software, law, and the <em>makerspace</em> in between.</p>
+      <div class="about-body">
+        <p>I'm a Computer Engineering student at University of the Pacific, graduating May 2026, also enrolled in the Pacific Legal Scholars honors pre-law program. My work spans embedded firmware and network security on the engineering side, and laser cutting, embroidery, woodworking, and 3D printing on the maker side — with photography and graphic design running through all of it.</p>
+        <p>I've spent the past few years running the makerspace at UoP — operating the equipment, training students, maintaining certifications, and building my own projects whenever there's a free machine. I care about finishing things, documenting them well, and making sure the next person can pick up where I left off.</p>
+        <p>I'm especially interested in digital forensics — the rare intersection of technical depth and legal reasoning. I'm a Girl Scout Gold Award recipient, a Theta Tau engineer, and a volunteer counselor at Camp Oasis for the Crohn's & Colitis Foundation.</p>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="sidebar-block">
+        <p class="sbl">Education</p>
+        <ul class="sbl-list">
+          <li>B.S. Computer Engineering — University of the Pacific (May 2026)</li>
+          <li>Pacific Legal Scholars — Experiential Honors Pre-Law Program</li>
+        </ul>
+      </div>
+      <div class="sidebar-block">
+        <p class="sbl">Engineering skills</p>
+        <ul class="sbl-list">
+          <li>Python, C/C++, Java, MATLAB, Haskell, Assembly (MIPS), SystemVerilog</li>
+          <li>Raspberry Pi, FPGA, GPIO, embedded systems</li>
+          <li>Kali Linux / Ubuntu, pen testing, cryptography, network scanning</li>
+          <li>PSpice, Autodesk Fusion, GitHub, VMware</li>
+        </ul>
+      </div>
+      <div class="sidebar-block">
+        <p class="sbl">Making skills</p>
+        <ul class="sbl-list">
+          <li>Laser cutter (wood, leather, slate, acrylic, paper)</li>
+          <li>CNC router, woodshop, plasma cutter, sheet metal</li>
+          <li>3D printing + CAD (Fusion 360)</li>
+          <li>Embroidery machine + digitizing</li>
+          <li>Cricut vinyl, spray paint, stenciling</li>
+          <li>Photography, videography, Adobe CC</li>
+        </ul>
+      </div>
+      <div class="sidebar-block">
+        <p class="sbl">Certifications (selected)</p>
+        <ul class="sbl-list">
+          <li>Atlassian Agile PM Professional Certificate</li>
+          <li>OSHA: Laser Safety, PPE, Hazard Communication, Respiratory Protection</li>
+          <li>Lab Compressed Gas Safety, Electrical Safety, Hand & Power Tool Safety</li>
+          <li>FRB Information Security & Ethics Training (2025)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="full-rule">
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="s-head">
+    <span class="s-num">Reviews</span>
+    <h2 class="s-title">From <em>teammates</em></h2>
+    <div class="s-line"></div>
+  </div>
+  <div class="testimonials">
+    <div class="tcard">
+      <p class="tcard-text">"Anna took the lead on the technical side of our project, particularly with the Raspberry Pi and Python implementation. She has a remarkable ability to break down complex concepts, making sure the entire team understood how everything worked. Her contributions were key to the success of the project."</p>
+      <p class="tcard-author">Faizah Muthana — AlertMate Teammate</p>
+    </div>
+    <div class="tcard">
+      <p class="tcard-text">"Anna is an amazing artist who brought creativity and innovation to the team. She designed eye-catching stickers and compiled an engaging video featuring clips of each project. Her communication skills were outstanding — always clear, responsive, and collaborative."</p>
+      <p class="tcard-author">Colin Schneider — PIES Marketing Team</p>
+    </div>
+  </div>
+</section>
+
+<hr class="full-rule">
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="contact-wrap">
+    <div>
+      <h2 class="contact-h">Let's build something <em>together.</em></h2>
+      <p class="contact-body">Actively looking for full-time roles in embedded systems, network security, or digital forensics — graduating May 2026, open to relocation. Always happy to talk shop about makerspace builds, hardware projects, or anything involving a laser cutter.</p>
+      <div class="contact-links">
+        <a href="mailto:anoto421@gmail.com" class="clink">
+          <div><p class="clink-type">Email</p><p class="clink-val">anoto421@gmail.com</p></div>
+          <span class="clink-arr">→</span>
+        </a>
+        <a href="https://www.linkedin.com/in/anna-noto-042102" target="_blank" class="clink">
+          <div><p class="clink-type">LinkedIn</p><p class="clink-val">anna-noto-042102</p></div>
+          <span class="clink-arr">→</span>
+        </a>
+        <a href="https://github.com/annanoto" target="_blank" class="clink">
+          <div><p class="clink-type">GitHub</p><p class="clink-val">github.com/annanoto</p></div>
+          <span class="clink-arr">→</span>
+        </a>
+        <a href="https://makerworld.com/en/models/2556777-door-handle-cup-for-condiments" target="_blank" class="clink">
+          <div><p class="clink-type">MakerWorld</p><p class="clink-val">Door handle condiment cup</p></div>
+          <span class="clink-arr">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="contact-sidebar">
+      <div class="sidebar-block">
+        <p class="sbl">Location</p>
+        <ul class="sbl-list">
+          <li>Stockton, CA (school year)</li>
+          <li>Long Island, NY (home)</li>
+          <li>Open to relocation</li>
+        </ul>
+      </div>
+      <div class="sidebar-block">
+        <p class="sbl">Roles I'm targeting</p>
+        <ul class="sbl-list">
+          <li>Embedded systems / IoT engineering</li>
+          <li>Network security & penetration testing</li>
+          <li>Digital forensics</li>
+          <li>Hardware prototyping & R&D</li>
+        </ul>
+      </div>
+      <div class="sidebar-block" style="margin-bottom:0">
+        <p class="sbl">Availability</p>
+        <ul class="sbl-list">
+          <li>Graduating May 2026</li>
+          <li>Available full-time from summer 2026</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="full-rule">
+
+<footer>
+  <p>© 2026 Anna Noto</p>
+  <p>Built with HTML · GitHub Pages · annanoto.github.io</p>
+</footer>
+
+<script>
+const btns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.pcard');
+
+btns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    btns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    cards.forEach(c => {
+      if (f === 'all') {
+        c.classList.remove('hidden');
+      } else {
+        const cats = c.dataset.cats || '';
+        c.classList.toggle('hidden', !cats.split(' ').includes(f));
+      }
+    });
+  });
+});
+
+document.querySelectorAll('.pcard[data-link]').forEach(card => {
+  card.addEventListener('click', (e) => {
+    if (!e.target.closest('a')) {
+      window.open(card.dataset.link, '_blank');
+    }
+  });
+});
+</script>
+</body>
+</html>
