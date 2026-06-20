@@ -257,6 +257,25 @@ nav{
 footer{border-top:1px solid var(--rule);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
 footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(--ink3)}
 
+/* ── PROJECT MEDIA SECTION ── */
+.pcard-media{margin-top:0.75rem;display:flex;flex-direction:column;gap:0.5rem}
+.pcard-media-title{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);padding-bottom:0.4rem;border-bottom:1px solid var(--rule)}
+.pcard-images{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:4px;margin-top:0.4rem}
+.pcard-thumb{aspect-ratio:1;background:var(--bg3);overflow:hidden;border-radius:2px;position:relative}
+.pcard-thumb span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;color:var(--ink3);text-align:center;padding:4px;line-height:1.4}
+.pcard-doclinks{display:flex;flex-direction:column;gap:4px;margin-top:0.4rem}
+.pcard-doclink{
+  display:flex;align-items:center;gap:8px;
+  padding:7px 12px;border:1px solid var(--rule);border-radius:var(--r);
+  background:var(--bg2);font-size:0.8rem;color:var(--ink2);
+  transition:border-color .15s,background .15s;
+}
+.pcard-doclink:hover{border-color:var(--teal);background:var(--teal3);color:var(--teal)}
+.pcard-doclink-icon{font-size:14px;flex-shrink:0;color:var(--ink3)}
+.pcard-doclink:hover .pcard-doclink-icon{color:var(--teal)}
+.pcard-doclink-label{font-family:var(--mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-left:auto;flex-shrink:0}
+.pcard-doclink:hover .pcard-doclink-label{color:var(--teal)}
+
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
   .hero{grid-template-columns:1fr}
@@ -397,7 +416,7 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
   <div class="projects-grid" id="grid">
 
     <!-- M.I.N.D. CAPSTONE -->
-    <div class="pcard" data-cats="engineering makerspace" data-link="https://www.linkedin.com/feed/update/urn:li:activity:7458707107421294592/">
+    <div class="pcard" data-cats="engineering makerspace">
       <div class="pcard-img c2"><span>Add photo: LED display board lit up in makerspace</span></div>
       <div>
         <div class="pcard-badges"><span class="badge badge-eng">Engineering</span><span class="badge badge-make">Makerspace</span></div>
@@ -412,7 +431,57 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
       <div class="pcard-tools">
         <span class="tool">Raspberry Pi 3B</span><span class="tool">HUB75 RGB</span><span class="tool">Python</span><span class="tool">Sheets API</span><span class="tool">GPIO</span><span class="tool">PSpice</span>
       </div>
-      <a class="pcard-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7458707107421294592/" target="_blank">Build log on LinkedIn →</a>
+
+      <div class="pcard-media">
+        <p class="pcard-media-title">Photos</p>
+        <div class="pcard-images">
+          <div class="pcard-thumb"><span>Photo 1 — add image</span></div>
+          <div class="pcard-thumb"><span>Photo 2 — add image</span></div>
+          <div class="pcard-thumb"><span>Photo 3 — add image</span></div>
+          <div class="pcard-thumb"><span>Photo 4 — add image</span></div>
+        </div>
+      </div>
+
+      <div class="pcard-media">
+        <p class="pcard-media-title">Documents & links</p>
+        <div class="pcard-doclinks">
+          <a class="pcard-doclink" href="YOUR_VIDEO_LINK_HERE" target="_blank">
+            <span class="pcard-doclink-icon">▶</span>
+            Technical design video
+            <span class="pcard-doclink-label">Video</span>
+          </a>
+          <a class="pcard-doclink" href="YOUR_SLIDESHOW_LINK_HERE" target="_blank">
+            <span class="pcard-doclink-icon">◻</span>
+            Final presentation slides
+            <span class="pcard-doclink-label">Slides</span>
+          </a>
+          <a class="pcard-doclink" href="YOUR_REPORT_LINK_HERE" target="_blank">
+            <span class="pcard-doclink-icon">≡</span>
+            Final report
+            <span class="pcard-doclink-label">PDF</span>
+          </a>
+          <a class="pcard-doclink" href="YOUR_POSTER_LINK_HERE" target="_blank">
+            <span class="pcard-doclink-icon">⊞</span>
+            Project poster
+            <span class="pcard-doclink-label">PDF</span>
+          </a>
+          <a class="pcard-doclink" href="YOUR_GITHUB_REPO_1_HERE" target="_blank">
+            <span class="pcard-doclink-icon">&#123;&#125;</span>
+            Source code — hardware
+            <span class="pcard-doclink-label">GitHub</span>
+          </a>
+          <a class="pcard-doclink" href="YOUR_GITHUB_REPO_2_HERE" target="_blank">
+            <span class="pcard-doclink-icon">&#123;&#125;</span>
+            Source code — software
+            <span class="pcard-doclink-label">GitHub</span>
+          </a>
+          <a class="pcard-doclink" href="https://www.linkedin.com/feed/update/urn:li:activity:7458707107421294592/" target="_blank">
+            <span class="pcard-doclink-icon">↗</span>
+            Build log on LinkedIn
+            <span class="pcard-doclink-label">LinkedIn</span>
+          </a>
+        </div>
+      </div>
     </div>
 
     <!-- ALERTMATE -->
