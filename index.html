@@ -179,10 +179,22 @@ nav{
   overflow:hidden;position:relative;margin-bottom:0.25rem;
   flex-shrink:0;
 }
+.pcard-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+}
 .pcard-img span{
   position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   font-family:var(--mono);font-size:10px;letter-spacing:0.06em;
   color:var(--ink3);text-transform:uppercase;padding:1rem;text-align:center;line-height:1.6;
+}
+.pcard-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
 }
 .pcard-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
 .pcard-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:0.25rem}
