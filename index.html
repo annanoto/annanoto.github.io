@@ -49,7 +49,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(244,241,234,0.95);backdrop
 .btn-line{background:transparent;color:var(--ink);border-color:var(--rule)}
 .btn-line:hover{border-color:var(--ink2)}
 /* HERO GALLERY */
-.hero-gallery{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;height:calc(100vh - 58px);gap:3px;background:var(--rule);}
+.hero-gallery{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr 1fr;height:calc(100vh - 58px);gap:3px;background:var(--rule);}
 .hg{background:var(--bg3);overflow:hidden;position:relative;cursor:pointer}
 .hg:hover .hg-overlay{opacity:1}
 .hg-overlay{position:absolute;inset:0;background:rgba(26,24,20,0.72);display:flex;flex-direction:column;justify-content:flex-end;padding:14px;opacity:0;transition:opacity .2s;}
@@ -57,10 +57,16 @@ nav{position:sticky;top:0;z-index:200;background:rgba(244,241,234,0.95);backdrop
 .hg-name{font-family:var(--serif);font-size:14px;color:#f4f1ea;line-height:1.2;margin-top:3px}
 .hg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;}
 .hg span.placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;letter-spacing:0.06em;color:var(--ink3);text-transform:uppercase;padding:12px;text-align:center;line-height:1.5;}
-.hg:nth-child(1){grid-column:1/3;grid-row:1/2}
-.hg:nth-child(2){grid-column:3;grid-row:1/3}
-.hg:nth-child(3){grid-column:1;grid-row:2/3}
-.hg:nth-child(4){grid-column:2;grid-row:2/3}
+/* row 1: portrait col1, portrait col2, landscape spans rows1-2 col3 */
+.hg:nth-child(1){grid-column:1;grid-row:1/2}
+.hg:nth-child(2){grid-column:2;grid-row:1/2}
+.hg:nth-child(3){grid-column:3;grid-row:1/3}
+/* row 2: portrait col1, portrait col2 — landscape col3 continues */
+.hg:nth-child(4){grid-column:1;grid-row:2/3}
+.hg:nth-child(5){grid-column:2;grid-row:2/3}
+/* row 3: landscape spans cols 1-2, portrait col3 */
+.hg:nth-child(6){grid-column:1/3;grid-row:3/4}
+.hg:nth-child(7){grid-column:3;grid-row:3/4}
 .c1{background:#d4c9b4}.c2{background:#b8c9c1}.c3{background:#ccc4b0}
 .c4{background:#c5b9a6}.c5{background:#bdc8be}.c6{background:#d0c4af}.c7{background:#c8bfad}
 /* SECTION */
@@ -221,21 +227,40 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
     </div>
   </div>
   <div class="hero-gallery">
+    <!-- PORTRAIT 1: col 1, row 1 -->
     <div class="hg c1">
-      <span class="placeholder">Add photo: cutting metal with horizontal bandsaw</span>
+      <span class="placeholder">Add portrait photo: cutting metal with horizontal bandsaw</span>
       <div class="hg-overlay"><span class="hg-label">Shop Skills</span><span class="hg-name">Metal Cutting</span></div>
     </div>
-    <div class="hg c2">
-      <span class="placeholder">Add photo: attending Maker Faire</span>
-      <div class="hg-overlay"><span class="hg-label">Community</span><span class="hg-name">Maker Faire</span></div>
-    </div>
+    <!-- PORTRAIT 2: col 2, row 1 -->
     <div class="hg c3">
-      <span class="placeholder">Add photo: controlling the CNC in the woodshop</span>
+      <span class="placeholder">Add portrait photo: spot welding</span>
+      <div class="hg-overlay"><span class="hg-label">Sheet Metal</span><span class="hg-name">Spot Welding</span></div>
+    </div>
+    <!-- LANDSCAPE 1: col 3, spans rows 1-2 -->
+    <div class="hg c2">
+      <span class="placeholder">Add landscape photo: controlling the CNC in the woodshop</span>
       <div class="hg-overlay"><span class="hg-label">Digital Fabrication</span><span class="hg-name">CNC Woodshop</span></div>
     </div>
+    <!-- PORTRAIT 3: col 1, row 2 -->
     <div class="hg c4">
-      <span class="placeholder">Add photo: spot welding</span>
-      <div class="hg-overlay"><span class="hg-label">Sheet Metal</span><span class="hg-name">Spot Welding</span></div>
+      <span class="placeholder">Add portrait photo: bending sheet metal</span>
+      <div class="hg-overlay"><span class="hg-label">Fabrication</span><span class="hg-name">Sheet Metal Bending</span></div>
+    </div>
+    <!-- PORTRAIT 4: col 2, row 2 -->
+    <div class="hg c7">
+      <span class="placeholder">Add portrait photo: repairing the cardboard boat</span>
+      <div class="hg-overlay"><span class="hg-label">Fabrication</span><span class="hg-name">Cardboard Boat Repair</span></div>
+    </div>
+    <!-- LANDSCAPE 2: cols 1-2, row 3 -->
+    <div class="hg c5">
+      <span class="placeholder">Add landscape photo: building the LED board</span>
+      <div class="hg-overlay"><span class="hg-label">Engineering</span><span class="hg-name">Building M.I.N.D.</span></div>
+    </div>
+    <!-- LANDSCAPE 3: col 3, row 3 -->
+    <div class="hg c6">
+      <span class="placeholder">Add landscape photo: attending Maker Faire</span>
+      <div class="hg-overlay"><span class="hg-label">Community</span><span class="hg-name">Maker Faire</span></div>
     </div>
   </div>
 </div>
@@ -252,7 +277,7 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
   <div class="accordion">
  
     <!-- CAT 1: ENGINEERING BUILDS -->
-    <div class="acc-item open" id="cat-engineering">
+    <div class="acc-item" id="cat-engineering">
       <div class="acc-header" data-target="cat-engineering">
         <div class="acc-header-left">
           <span class="acc-emoji">&#x2699;&#xFE0F;</span>
