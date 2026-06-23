@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anna Noto — Engineer & Maker</title>
+<title>Anna Noto &mdash; Engineer &amp; Maker</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -14,6 +14,7 @@
   --teal:#0f6e56;--teal2:#1d9e75;--teal3:#e1f5ee;
   --amber:#854f0b;--amber2:#faeeda;
   --coral:#993c1d;--coral2:#faece7;
+  --purple:#4a2d7a;--purple2:#ede8f7;
   --rule:#d5d1c6;
   --serif:'DM Serif Display',serif;--sans:'DM Sans',sans-serif;--mono:'DM Mono',monospace;
   --r:4px;
@@ -29,6 +30,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(244,241,234,0.95);backdrop
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);transition:color .15s}
 .nav-links a:hover{color:var(--teal)}
+/* HERO */
 .hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 58px);max-width:1400px;margin:0 auto;}
 .hero-left{padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--rule);}
 .hero-kicker{display:flex;align-items:center;gap:10px;margin-bottom:2rem;}
@@ -46,6 +48,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(244,241,234,0.95);backdrop
 .btn-dark:hover{background:var(--teal);border-color:var(--teal)}
 .btn-line{background:transparent;color:var(--ink);border-color:var(--rule)}
 .btn-line:hover{border-color:var(--ink2)}
+/* HERO GALLERY */
 .hero-gallery{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;height:calc(100vh - 58px);gap:3px;background:var(--rule);}
 .hg{background:var(--bg3);overflow:hidden;position:relative;cursor:pointer}
 .hg:hover .hg-overlay{opacity:1}
@@ -58,11 +61,9 @@ nav{position:sticky;top:0;z-index:200;background:rgba(244,241,234,0.95);backdrop
 .hg:nth-child(2){grid-column:3;grid-row:1/3}
 .hg:nth-child(3){grid-column:1;grid-row:2/3}
 .hg:nth-child(4){grid-column:2;grid-row:2/3}
-.hg:nth-child(5){grid-column:1/2;grid-row:3/4}
-.hg:nth-child(6){grid-column:2/3;grid-row:3/4}
-.hg:nth-child(7){grid-column:3;grid-row:3/4}
 .c1{background:#d4c9b4}.c2{background:#b8c9c1}.c3{background:#ccc4b0}
 .c4{background:#c5b9a6}.c5{background:#bdc8be}.c6{background:#d0c4af}.c7{background:#c8bfad}
+/* SECTION */
 .section{max-width:1400px;margin:0 auto;padding:6rem 3rem}
 .full-rule{border:none;border-top:1px solid var(--rule);max-width:100%}
 .s-head{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:4rem}
@@ -81,12 +82,13 @@ nav{position:sticky;top:0;z-index:200;background:rgba(244,241,234,0.95);backdrop
 .acc-title{font-family:var(--serif);font-size:1.5rem;color:var(--ink);letter-spacing:-0.01em;line-height:1.2}
 .acc-subtitle{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);margin-top:3px}
 .acc-count{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;color:var(--ink3);background:var(--bg3);padding:3px 10px;border-radius:20px;border:1px solid var(--rule);}
-.acc-chevron{font-size:18px;color:var(--ink3);transition:transform .25s;flex-shrink:0;}
+.acc-chevron{font-size:22px;color:var(--ink);font-weight:bold;transition:transform .25s;flex-shrink:0;}
 .acc-item.open .acc-chevron{transform:rotate(180deg)}
 .acc-body{display:none;padding:2px 0 0;}
 .acc-item.open .acc-body{display:block}
 /* CARDS */
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:2px;background:var(--rule);align-items:start;}
+.projects-grid-2col{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--rule);align-items:start;}
 .pcard{background:var(--bg);padding:2rem;display:flex;flex-direction:column;gap:1rem;transition:background .2s;cursor:default;}
 .pcard:hover{background:#f0ece2}
 .pcard-img{width:100%;aspect-ratio:4/3;background:var(--bg3);overflow:hidden;position:relative;margin-bottom:0.25rem;flex-shrink:0;}
@@ -101,6 +103,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(244,241,234,0.95);backdrop
 .badge-eng{background:var(--teal3);color:#085041}
 .badge-make{background:var(--amber2);color:#412402}
 .badge-art{background:var(--coral2);color:#4a1b0c}
+.badge-pm{background:var(--purple2);color:#2e1a4e}
 .pcard-title{font-family:var(--serif);font-size:1.2rem;color:var(--ink);line-height:1.25;letter-spacing:-0.01em}
 .pcard-sub{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--teal);margin-top:2px}
 .pcard-desc{font-size:0.875rem;color:var(--ink2);line-height:1.7;}
@@ -139,7 +142,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(244,241,234,0.95);backdrop
 .sbl{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.6rem;padding-bottom:0.5rem;border-bottom:1px solid var(--rule)}
 .sbl-list{list-style:none;display:flex;flex-direction:column;gap:0.3rem}
 .sbl-list li{font-size:0.875rem;color:var(--ink2);padding-left:1rem;position:relative;line-height:1.5}
-.sbl-list li::before{content:'·';position:absolute;left:0;color:var(--teal2)}
+.sbl-list li::before{content:'\00B7';position:absolute;left:0;color:var(--teal2)}
 .testimonials{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--rule)}
 .tcard{background:var(--ink);padding:2.5rem}
 .tcard-text{font-family:var(--serif);font-style:italic;font-size:1.1rem;line-height:1.65;color:rgba(244,241,234,0.88);margin-bottom:1.5rem;}
@@ -161,6 +164,7 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
   .hero-gallery{height:60vw;grid-template-rows:1fr 1fr}
   .about-grid,.contact-wrap,.testimonials{grid-template-columns:1fr}
   .about-left{border-right:none;border-bottom:1px solid var(--rule)}
+  .projects-grid-2col{grid-template-columns:1fr}
 }
 @media(max-width:700px){
   nav{padding:0 1.5rem}
@@ -168,12 +172,13 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
   .hero-left{padding:3rem 1.5rem}
   .section{padding:4rem 1.5rem}
   .projects-grid{grid-template-columns:1fr}
+  .projects-grid-2col{grid-template-columns:1fr}
   .acc-header{padding:1.25rem 1.5rem}
 }
 </style>
 </head>
 <body>
-
+ 
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lb-close">&#x2715;</button>
   <button class="lightbox-prev" id="lb-prev">&#x2039;</button>
@@ -181,7 +186,7 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
   <button class="lightbox-next" id="lb-next">&#x203a;</button>
   <p class="lightbox-caption" id="lb-caption"></p>
 </div>
-
+ 
 <nav>
   <a class="logo" href="#">Anna <em>Noto</em></a>
   <div class="nav-r">
@@ -192,16 +197,22 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
     </ul>
   </div>
 </nav>
-
+ 
 <div class="hero">
   <div class="hero-left">
     <div class="hero-kicker"><div class="kicker-dot"></div><span>Maker Portfolio</span></div>
     <h1>Engineer,<br>Maker,<br><em>Student.</em></h1>
-    <p class="hero-desc">Embedded systems, laser-cut wood boxes, network security research, cardboard boats, Raspberry Pi alarms, embroidered jackets — I work across every medium a makerspace has to offer.</p>
+    <p class="hero-desc">Embedded systems, laser-cut wood boxes, network security research, cardboard boats, Raspberry Pi alarms, embroidered jackets &#8212; I work across every medium a makerspace has to offer.</p>
     <div class="hero-pills">
-      <span class="pill teal">Raspberry Pi</span><span class="pill teal">Python</span><span class="pill teal">HUB75 RGB</span>
-      <span class="pill">3D printing &amp; CAD</span><span class="pill">Laser cutting</span><span class="pill">Sheet metal &amp; plasma</span>
-      <span class="pill">CNC router</span><span class="pill">Embroidery machine</span><span class="pill">FPGA</span><span class="pill">Pen testing</span>
+      <span class="pill teal">Raspberry Pi</span>
+      <span class="pill teal">Python</span>
+      <span class="pill teal">HUB75 RGB</span>
+      <span class="pill teal">FPGA</span>
+      <span class="pill">3D printing &amp; CAD</span>
+      <span class="pill">Laser cutting</span>
+      <span class="pill">Sheet metal &amp; plasma</span>
+      <span class="pill">CNC router</span>
+      <span class="pill">Embroidery machine</span>
     </div>
     <div class="hero-btns">
       <a href="#work" class="btn btn-dark">See all projects</a>
@@ -210,63 +221,90 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
     </div>
   </div>
   <div class="hero-gallery">
-    <div class="hg c1"><img src="D75_9185.JPG" alt="LED display lit up"><div class="hg-overlay"><span class="hg-label">Engineering &middot; Capstone</span><span class="hg-name">M.I.N.D. LED Display</span></div></div>
-    <div class="hg c2"><span class="placeholder">Add photo: Travel treasures box with living hinges</span><div class="hg-overlay"><span class="hg-label">Laser cut &middot; Wood</span><span class="hg-name">Travel Treasures Box</span></div></div>
-    <div class="hg c3"><span class="placeholder">Add photo: NY Liberty embroidered jacket</span><div class="hg-overlay"><span class="hg-label">Embroidery &middot; Vinyl</span><span class="hg-name">NY Liberty Jacket</span></div></div>
-    <div class="hg c4"><span class="placeholder">Add photo: Elephant tray</span><div class="hg-overlay"><span class="hg-label">CNC &middot; Woodshop</span><span class="hg-name">Elephant Tray</span></div></div>
-    <div class="hg c5"><span class="placeholder">Add photo: Humidifier stool</span><div class="hg-overlay"><span class="hg-label">Sheet metal &middot; CAD</span><span class="hg-name">Humidifier Stool</span></div></div>
-    <div class="hg c6"><img src="IMG_5157.JPG" alt="AlertMate Functional Prototype"><div class="hg-overlay"><span class="hg-label">Electronics &middot; Entrepreneurship</span><span class="hg-name">AlertMate</span></div></div>
-    <div class="hg c7"><span class="placeholder">Add photo: cardboard boat regatta</span><div class="hg-overlay"><span class="hg-label">Fabrication &middot; Fun</span><span class="hg-name">Cardboard Boat Regatta</span></div></div>
+    <div class="hg c1">
+      <span class="placeholder">Add photo: cutting metal with horizontal bandsaw</span>
+      <div class="hg-overlay"><span class="hg-label">Shop Skills</span><span class="hg-name">Metal Cutting</span></div>
+    </div>
+    <div class="hg c2">
+      <span class="placeholder">Add photo: attending Maker Faire</span>
+      <div class="hg-overlay"><span class="hg-label">Community</span><span class="hg-name">Maker Faire</span></div>
+    </div>
+    <div class="hg c3">
+      <span class="placeholder">Add photo: controlling the CNC in the woodshop</span>
+      <div class="hg-overlay"><span class="hg-label">Digital Fabrication</span><span class="hg-name">CNC Woodshop</span></div>
+    </div>
+    <div class="hg c4">
+      <span class="placeholder">Add photo: spot welding</span>
+      <div class="hg-overlay"><span class="hg-label">Sheet Metal</span><span class="hg-name">Spot Welding</span></div>
+    </div>
   </div>
 </div>
-
+ 
 <hr class="full-rule">
-
+ 
 <section class="section" id="work">
   <div class="s-head">
     <span class="s-num">All projects</span>
     <h2 class="s-title">Engineering <em>&amp;</em> Making</h2>
     <div class="s-line"></div>
   </div>
-
+ 
   <div class="accordion">
-
-    <!-- CAT 1 -->
+ 
+    <!-- CAT 1: ENGINEERING BUILDS -->
     <div class="acc-item open" id="cat-engineering">
       <div class="acc-header" data-target="cat-engineering">
         <div class="acc-header-left">
           <span class="acc-emoji">&#x2699;&#xFE0F;</span>
           <div>
             <p class="acc-title">Engineering Builds &amp; Prototyping</p>
-            <p class="acc-subtitle">Problem-solving, systems, iteration, electronics, mechanical design</p>
+            <p class="acc-subtitle">Electronics, embedded systems, software, and CAD-driven fabrication</p>
           </div>
         </div>
         <div style="display:flex;align-items:center;gap:1rem"><span class="acc-count">7 projects</span><span class="acc-chevron">&#x25BE;</span></div>
       </div>
       <div class="acc-body">
         <div class="projects-grid">
-
+ 
+          <!-- MIND -->
           <div class="pcard">
             <div class="pcard-img"><img src="D75_9185.JPG" alt="LED display board"></div>
-            <div><div class="pcard-badges"><span class="badge badge-eng">Engineering</span><span class="badge badge-make">Makerspace</span></div><div class="pcard-top"><div><p class="pcard-title">M.I.N.D. &mdash; Makerspace &amp; Notification Information Display</p><p class="pcard-sub">Senior Design Capstone &middot; 2025&ndash;2026</p></div></div></div>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-eng">Engineering</span><span class="badge badge-make">Makerspace</span><span class="badge badge-pm">Project Management</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">M.I.N.D. &#8212; Makerspace &amp; Notification Information Display</p>
+                <p class="pcard-sub">Senior Design Capstone &middot; 2025&#8211;2026</p>
+              </div></div>
+            </div>
             <p class="pcard-desc">Permanent large-format HUB75 RGB LED board for the University of the Pacific Makerspace showing real-time shop hours, tool availability, 3D print queue, and upcoming workshops. Driven by a Raspberry Pi with a Python + Google Sheets API data pipeline and offline fallback as well as an optional touchscreen controller.</p>
-            <div class="pcard-tools"><span class="tool">Raspberry Pi</span><span class="tool">LED Matrix</span><span class="tool">HUB75 RGB</span><span class="tool">Python</span><span class="tool">API</span><span class="tool">GPIO</span><span class="tool">PSpice</span></div>
+            <div class="pcard-tools">
+              <span class="tool">Raspberry Pi</span><span class="tool">LED Matrix</span><span class="tool">HUB75 RGB</span><span class="tool">Python</span><span class="tool">API</span><span class="tool">GPIO</span><span class="tool">PSpice</span><span class="tool">Power systems</span><span class="tool">Wireless comms</span><span class="tool">Embedded systems</span><span class="tool">Team lead</span>
+            </div>
             <div class="pcard-media"><p class="pcard-media-title">Documents &amp; links</p><div class="pcard-doclinks">
               <a class="pcard-doclink" href="https://youtu.be/oEXht4vAIck" target="_blank"><span class="pcard-doclink-icon">&#x25B6;</span>Technical design video<span class="pcard-doclink-label">Video</span></a>
               <a class="pcard-doclink" href="https://docs.google.com/presentation/d/1wEXBcM5jYUTAH2OJZPto2nFZEToRBjfwoNRor5PCfEQ/edit?usp=sharing" target="_blank"><span class="pcard-doclink-icon">&#x25FB;</span>Final presentation slides<span class="pcard-doclink-label">Slides</span></a>
               <a class="pcard-doclink" href="https://docs.google.com/document/d/1UYhLJOZ5cQYxD0W1Jz5YoA-Ic1TJZ2LdM4WIGZIzOok/edit?usp=sharing" target="_blank"><span class="pcard-doclink-icon">&#x2261;</span>Final Report &amp; User Manual<span class="pcard-doclink-label">DOC</span></a>
               <a class="pcard-doclink" href="seniordesignposter_projectdayfinal.pdf" target="_blank"><span class="pcard-doclink-icon">&#x229E;</span>Project poster<span class="pcard-doclink-label">PDF</span></a>
-              <a class="pcard-doclink" href="https://github.com/annanoto/LED-Display-Kivy-Based-Controller" target="_blank"><span class="pcard-doclink-icon">&#123;&#125;</span>Source code &mdash; hardware<span class="pcard-doclink-label">GitHub</span></a>
-              <a class="pcard-doclink" href="https://github.com/Matthew01156/LED-Matrix-Display" target="_blank"><span class="pcard-doclink-icon">&#123;&#125;</span>Source code &mdash; software<span class="pcard-doclink-label">GitHub</span></a>
+              <a class="pcard-doclink" href="https://github.com/annanoto/LED-Display-Kivy-Based-Controller" target="_blank"><span class="pcard-doclink-icon">&#123;&#125;</span>Source code &#8212; hardware<span class="pcard-doclink-label">GitHub</span></a>
+              <a class="pcard-doclink" href="https://github.com/Matthew01156/LED-Matrix-Display" target="_blank"><span class="pcard-doclink-icon">&#123;&#125;</span>Source code &#8212; software<span class="pcard-doclink-label">GitHub</span></a>
               <a class="pcard-doclink" href="https://www.linkedin.com/feed/update/urn:li:activity:7458707107421294592/" target="_blank"><span class="pcard-doclink-icon">&#x2197;</span>LinkedIn Post<span class="pcard-doclink-label">LinkedIn</span></a>
             </div></div>
           </div>
-
+ 
+          <!-- ALERTMATE -->
           <div class="pcard">
             <div class="pcard-img c3"><img src="IMG_5201.JPG" alt="AlertMate Team Photo"></div>
-            <div><div class="pcard-badges"><span class="badge badge-eng">Engineering</span></div><div class="pcard-top"><div><p class="pcard-title">AlertMate Portable Security System</p><p class="pcard-sub">Design &amp; Innovation &middot; 2024</p></div></div></div>
-            <p class="pcard-desc">Portable door/window alarm for temporary housing (dorms, Airbnbs, hotels). Raspberry Pi + reed switch detects unauthorized entry and fires an SMS alert. Mounts anywhere with Command strips &mdash; no installation required.</p>
-            <div class="pcard-tools"><span class="tool">Raspberry Pi</span><span class="tool">Python</span><span class="tool">Reed switch</span><span class="tool">Breadboard</span></div>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-eng">Engineering</span><span class="badge badge-pm">Project Management</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">AlertMate Portable Security System</p>
+                <p class="pcard-sub">Design &amp; Innovation &middot; 2024</p>
+              </div></div>
+            </div>
+            <p class="pcard-desc">Portable door/window alarm for temporary housing (dorms, Airbnbs, hotels). Raspberry Pi + reed switch detects unauthorized entry and fires an SMS alert. Mounts anywhere with Command strips &#8212; no installation required.</p>
+            <div class="pcard-tools">
+              <span class="tool">Raspberry Pi</span><span class="tool">Python</span><span class="tool">Reed switch</span><span class="tool">Breadboard</span><span class="tool">Market research</span><span class="tool">Feasibility analysis</span>
+            </div>
             <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
               <div class="pcard-thumb"><img src="IMG_5157.JPG" alt="Functional Prototype"></div>
               <div class="pcard-thumb"><img src="IMG_7376.JPEG" alt="Functional and Conceptual Prototypes"></div>
@@ -278,11 +316,18 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
               <a class="pcard-doclink" href="main (1).py" target="_blank"><span class="pcard-doclink-icon">&#123;&#125;</span>Source code<span class="pcard-doclink-label">File</span></a>
             </div></div>
           </div>
-
+ 
+          <!-- DOOR HANDLE CUP -->
           <div class="pcard">
             <div class="pcard-img c7"><span>Add photo: cup clipped onto car door handle with ketchup in it</span></div>
-            <div><div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div><div class="pcard-top"><div><p class="pcard-title">Door Handle Condiment Cup</p><p class="pcard-sub">3D Printed &middot; CAD &middot; Published on MakerWorld</p></div></div></div>
-            <p class="pcard-desc">Designed a cup that clips onto the door handle inside a car to hold ketchup while eating french fries on road trips. CAD'd, printed, iterated, and published on MakerWorld &mdash; because good design solves real problems, even small ones.</p>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Door Handle Condiment Cup</p>
+                <p class="pcard-sub">3D Printed &middot; CAD &middot; Published on MakerWorld</p>
+              </div></div>
+            </div>
+            <p class="pcard-desc">Designed a cup that clips onto the door handle inside a car to hold ketchup while eating french fries on road trips. CAD'd, printed, iterated, and published on MakerWorld &#8212; because good design solves real problems, even small ones.</p>
             <div class="pcard-tools"><span class="tool">CAD</span><span class="tool">3D printing</span><span class="tool">MakerWorld</span></div>
             <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
               <div class="pcard-thumb"><span>Photo 1</span></div><div class="pcard-thumb"><span>Photo 2</span></div><div class="pcard-thumb"><span>Photo 3</span></div>
@@ -291,12 +336,21 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
               <a class="pcard-doclink" href="https://makerworld.com/en/models/2556777-door-handle-cup-for-condiments#profileId-2816516" target="_blank"><span class="pcard-doclink-icon">&#x229E;</span>View on MakerWorld<span class="pcard-doclink-label">MakerWorld</span></a>
             </div></div>
           </div>
-
+ 
+          <!-- HUMIDIFIER STOOL -->
           <div class="pcard">
             <div class="pcard-img c3"><span>Add photo: finished sheet metal humidifier stool</span></div>
-            <div><div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div><div class="pcard-top"><div><p class="pcard-title">Humidifier Stool</p><p class="pcard-sub">Sheet Metal &middot; Plasma Cutter &middot; CAD</p></div></div></div>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-eng">Engineering</span><span class="badge badge-make">Makerspace</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Humidifier Stool</p>
+                <p class="pcard-sub">Sheet Metal &middot; Plasma Cutter &middot; CAD</p>
+              </div></div>
+            </div>
             <p class="pcard-desc">Designed a small stool to elevate a humidifier. Prototyped the full design by laser cutting it in paper first, then executed in sheet metal using the plasma cutter and sheet metal tools. CAD-to-fabrication end-to-end.</p>
-            <div class="pcard-tools"><span class="tool">CAD</span><span class="tool">Plasma cutter</span><span class="tool">Sheet metal</span><span class="tool">Laser cutter (proto)</span></div>
+            <div class="pcard-tools">
+              <span class="tool">CAD</span><span class="tool">Plasma cutter</span><span class="tool">Sheet metal</span><span class="tool">Laser cutter (proto)</span><span class="tool">Spot welder</span><span class="tool">Machine shop</span>
+            </div>
             <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
               <div class="pcard-thumb"><span>Photo 1</span></div><div class="pcard-thumb"><span>Photo 2</span></div><div class="pcard-thumb"><span>Photo 3</span></div><div class="pcard-thumb"><span>Photo 4</span></div>
             </div></div>
@@ -304,12 +358,21 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
               <a class="pcard-doclink" href="YOUR_CAD_FILE_LINK_HERE" target="_blank"><span class="pcard-doclink-icon">&#x229E;</span>DXF file<span class="pcard-doclink-label">File</span></a>
             </div></div>
           </div>
-
+ 
+          <!-- ELEPHANT TRAY -->
           <div class="pcard">
             <div class="pcard-img c4"><span>Add photo: finished elephant tray</span></div>
-            <div><div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div><div class="pcard-top"><div><p class="pcard-title">Elephant Tray</p><p class="pcard-sub">CNC Router &middot; Woodshop</p></div></div></div>
-            <p class="pcard-desc">Designed an elephant-shaped serving tray from scratch in CAD, then cut it on the CNC router. Full workflow from digital design to finished wood piece.</p>
-            <div class="pcard-tools"><span class="tool">CAD</span><span class="tool">CNC router</span><span class="tool">Woodshop</span></div>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-eng">Engineering</span><span class="badge badge-make">Makerspace</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Elephant Tray</p>
+                <p class="pcard-sub">CAD &middot; CAM &middot; CNC Router &middot; Woodshop</p>
+              </div></div>
+            </div>
+            <p class="pcard-desc">Designed the tray in CAD, generated toolpaths through CAM, and ran the job on the woodshop CNC router. After machining, used shop tools to hand-drill the eye detail and sand the piece through multiple grits to a finished surface. Full digital-to-physical workflow.</p>
+            <div class="pcard-tools">
+              <span class="tool">CAD</span><span class="tool">CAM</span><span class="tool">CNC router</span><span class="tool">Power tools</span><span class="tool">Woodshop</span>
+            </div>
             <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
               <div class="pcard-thumb"><span>Photo 1</span></div><div class="pcard-thumb"><span>Photo 2</span></div><div class="pcard-thumb"><span>Photo 3</span></div>
             </div></div>
@@ -317,11 +380,18 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
               <a class="pcard-doclink" href="YOUR_CAD_FILE_LINK_HERE" target="_blank"><span class="pcard-doclink-icon">&#x229E;</span>CAD file<span class="pcard-doclink-label">File</span></a>
             </div></div>
           </div>
-
+ 
+          <!-- CARDBOARD BOAT -->
           <div class="pcard">
             <div class="pcard-img c7"><img src="IMG_8951.jpeg" alt="Boat Regatta Makerspace Team"></div>
-            <div><div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div><div class="pcard-top"><div><p class="pcard-title">Cardboard Boat Regatta</p><p class="pcard-sub">Fabrication &middot; Structural Design &middot; Fun</p></div></div></div>
-            <p class="pcard-desc">Built and raced a cardboard boat. Structural design, material constraints, waterproofing strategy, and the very real consequences of getting it wrong. Engineering under pressure &mdash; literally.</p>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-eng">Engineering</span><span class="badge badge-make">Makerspace</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Cardboard Boat Regatta</p>
+                <p class="pcard-sub">Fabrication &middot; Structural Design &middot; Fun</p>
+              </div></div>
+            </div>
+            <p class="pcard-desc">Built and raced a cardboard boat. Structural design, material constraints, waterproofing strategy, and the very real consequences of getting it wrong. Engineering under pressure &#8212; literally.</p>
             <div class="pcard-tools"><span class="tool">Cardboard fabrication</span><span class="tool">Structural design</span><span class="tool">Waterproofing</span></div>
             <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
               <div class="pcard-thumb"><img src="IMG_8775.jpeg" alt="Boat Regatta 1"></div>
@@ -329,16 +399,23 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
               <div class="pcard-thumb"><span>Photo 3</span></div><div class="pcard-thumb"><span>Photo 4</span></div>
             </div></div>
           </div>
-
+ 
+          <!-- DYNAMIC ROUTING -->
           <div class="pcard">
             <div class="pcard-img c5"><img src="ResultsandAnalysis.png" alt="Dynamic Routing Results"></div>
-            <div><div class="pcard-badges"><span class="badge badge-eng">Engineering</span></div><div class="pcard-top"><div><p class="pcard-title">Dynamic Routing in Faulty Networks</p><p class="pcard-sub">Computer Networking &middot; 2024</p></div></div></div>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-eng">Engineering</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Dynamic Routing in Faulty Networks</p>
+                <p class="pcard-sub">Computer Networking &middot; 2024</p>
+              </div></div>
+            </div>
             <p class="pcard-desc">Python simulation using Dijkstra's algorithm to compute and visualize shortest paths in network graphs, adapting in real time to node/edge failures. Tested across 9, 20, and 50-node configurations with NetworkX + Matplotlib.</p>
             <div class="pcard-tools"><span class="tool">Python</span><span class="tool">NetworkX</span><span class="tool">Dijkstra's</span><span class="tool">NumPy</span><span class="tool">Matplotlib</span></div>
             <div class="pcard-media"><p class="pcard-media-title">Photos &amp; screenshots</p><div class="pcard-images">
               <div class="pcard-thumb"><img src="FutureWork.png" alt="Future Work"></div>
               <div class="pcard-thumb"><img src="dynamic_routing_50_node.png" alt="50 Node"></div>
-              <div class="pcard-thumb"><img src="dynamic_routing_node_generation.png" alt="20 Percent of Nodes Removed"></div>
+              <div class="pcard-thumb"><img src="dynamic_routing_node_generation.png" alt="20 Percent Nodes Removed"></div>
               <div class="pcard-thumb"><img src="dynamic_routing (1).png" alt="Dynamic Routing"></div>
             </div></div>
             <div class="pcard-media"><p class="pcard-media-title">Documents &amp; links</p><div class="pcard-doclinks">
@@ -346,29 +423,36 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
               <a class="pcard-doclink" href="https://github.com/LocNguyen1703/COMP177_finalproject" target="_blank"><span class="pcard-doclink-icon">&#123;&#125;</span>Source code<span class="pcard-doclink-label">GitHub</span></a>
             </div></div>
           </div>
-
+ 
         </div>
       </div>
     </div>
-
-    <!-- CAT 2 -->
+ 
+    <!-- CAT 2: DIGITAL FABRICATION -->
     <div class="acc-item" id="cat-fabrication">
       <div class="acc-header" data-target="cat-fabrication">
         <div class="acc-header-left">
           <span class="acc-emoji">&#x1F6E0;&#xFE0F;</span>
           <div>
             <p class="acc-title">Digital Fabrication &amp; Shop Skills</p>
-            <p class="acc-subtitle">Laser cutting, CNC, woodshop, sheet metal &mdash; proving I know the machines and materials</p>
+            <p class="acc-subtitle">Laser cutting, woodshop, and material craft &#8212; knowing the machines and what they can do</p>
           </div>
         </div>
         <div style="display:flex;align-items:center;gap:1rem"><span class="acc-count">6 projects</span><span class="acc-chevron">&#x25BE;</span></div>
       </div>
       <div class="acc-body">
         <div class="projects-grid">
-
+ 
+          <!-- TRAVEL BOX -->
           <div class="pcard">
             <div class="pcard-img c5"><span>Add photo: travel treasures box open showing living hinges</span></div>
-            <div><div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div><div class="pcard-top"><div><p class="pcard-title">Travel Treasures Box</p><p class="pcard-sub">Laser Cut &middot; Living Hinges &middot; Adobe Illustrator</p></div></div></div>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Travel Treasures Box</p>
+                <p class="pcard-sub">Laser Cut &middot; Living Hinges &middot; Adobe Illustrator</p>
+              </div></div>
+            </div>
             <p class="pcard-desc">Laser-cut wooden box with living hinge lids for flexible, tool-free opening. Custom engraving artwork designed entirely in Adobe Illustrator. A good example of combining precise digital design with the tactile quality of wood.</p>
             <div class="pcard-tools"><span class="tool">Laser cutter</span><span class="tool">Adobe Illustrator</span><span class="tool">Living hinges</span><span class="tool">Wood engraving</span></div>
             <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
@@ -378,11 +462,18 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
               <a class="pcard-doclink" href="YOUR_ILLUSTRATOR_FILE_LINK_HERE" target="_blank"><span class="pcard-doclink-icon">&#x229E;</span>DXF file<span class="pcard-doclink-label">File</span></a>
             </div></div>
           </div>
-
+ 
+          <!-- GRADUATION FRAME -->
           <div class="pcard">
             <div class="pcard-img c1"><span>Add photo: laser-cut graduation picture frame</span></div>
-            <div><div class="pcard-badges"><span class="badge badge-make">Makerspace</span><span class="badge badge-art">Art &amp; Design</span></div><div class="pcard-top"><div><p class="pcard-title">Graduation Picture Frame</p><p class="pcard-sub">Laser Cut &middot; Original Design</p></div></div></div>
-            <p class="pcard-desc">Original picture frame design created in Adobe Illustrator and cut on the laser cutter. Every element &mdash; the layout, decorative patterns, text &mdash; designed from scratch.</p>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-make">Makerspace</span><span class="badge badge-art">Art &amp; Design</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Graduation Picture Frame</p>
+                <p class="pcard-sub">Laser Cut &middot; Original Design</p>
+              </div></div>
+            </div>
+            <p class="pcard-desc">Original picture frame design created in Adobe Illustrator and cut on the laser cutter. Every element &#8212; the layout, decorative patterns, text &#8212; designed from scratch.</p>
             <div class="pcard-tools"><span class="tool">Laser cutter</span><span class="tool">Adobe Illustrator</span><span class="tool">Original design</span></div>
             <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
               <div class="pcard-thumb"><span>Photo 1</span></div><div class="pcard-thumb"><span>Photo 2</span></div><div class="pcard-thumb"><span>Photo 3</span></div>
@@ -391,101 +482,156 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
               <a class="pcard-doclink" href="YOUR_ILLUSTRATOR_FILE_LINK_HERE" target="_blank"><span class="pcard-doclink-icon">&#x229E;</span>DXF file<span class="pcard-doclink-label">File</span></a>
             </div></div>
           </div>
-
+ 
+          <!-- LEATHER ORNAMENTS -->
           <div class="pcard">
             <div class="pcard-img c7"><span>Add photo: leather holiday ornaments</span></div>
-            <div><div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div><div class="pcard-top"><div><p class="pcard-title">Leather Holiday Ornaments</p><p class="pcard-sub">Laser Engraved &middot; Leather</p></div></div></div>
-            <p class="pcard-desc">Laser-cut and engraved leather holiday ornaments. Working with leather on the laser cutter requires tuned power/speed settings and an eye for material behavior &mdash; small projects that demand precision.</p>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Leather Holiday Ornaments</p>
+                <p class="pcard-sub">Laser Engraved &middot; Leather</p>
+              </div></div>
+            </div>
+            <p class="pcard-desc">Laser-cut and engraved leather holiday ornaments. Working with leather on the laser cutter requires tuned power/speed settings and an eye for material behavior &#8212; small projects that demand precision.</p>
             <div class="pcard-tools"><span class="tool">Laser cutter</span><span class="tool">Leather</span><span class="tool">Engraving</span></div>
             <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
               <div class="pcard-thumb"><span>Photo 1</span></div><div class="pcard-thumb"><span>Photo 2</span></div><div class="pcard-thumb"><span>Photo 3</span></div>
             </div></div>
           </div>
-
+ 
+          <!-- SLATE COASTERS -->
           <div class="pcard">
             <div class="pcard-img c4"><span>Add photo: slate coasters with engraving</span></div>
-            <div><div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div><div class="pcard-top"><div><p class="pcard-title">Laser Engraved Slate Coasters</p><p class="pcard-sub">Laser Engraved &middot; Stone</p></div></div></div>
-            <p class="pcard-desc">Custom laser-engraved slate coasters. Engraving on stone requires different settings than wood or leather &mdash; part of the ongoing learning that comes with running a makerspace day-to-day.</p>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Laser Engraved Slate Coasters</p>
+                <p class="pcard-sub">Laser Engraved &middot; Stone</p>
+              </div></div>
+            </div>
+            <p class="pcard-desc">Custom laser-engraved slate coasters. Engraving on stone requires different settings than wood or leather &#8212; part of the ongoing learning that comes with running a makerspace day-to-day.</p>
             <div class="pcard-tools"><span class="tool">Laser cutter</span><span class="tool">Stone engraving</span></div>
             <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
               <div class="pcard-thumb"><span>Photo 1</span></div><div class="pcard-thumb"><span>Photo 2</span></div><div class="pcard-thumb"><span>Photo 3</span></div>
             </div></div>
           </div>
-
+ 
+          <!-- CARABINER -->
           <div class="pcard">
             <div class="pcard-img c2"><span>Add photo: laser-cut carabiner</span></div>
-            <div><div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div><div class="pcard-top"><div><p class="pcard-title">Laser Engraved Carabiner</p><p class="pcard-sub">Laser Cut &middot; Structural Form</p></div></div></div>
-            <p class="pcard-desc">A carabiner cut on the laser cutter &mdash; an exercise in designing a functional form with structural considerations. One of many quick-turn makerspace builds exploring what the machines can do.</p>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Laser Engraved Carabiner</p>
+                <p class="pcard-sub">Laser Cut &middot; Structural Form</p>
+              </div></div>
+            </div>
+            <p class="pcard-desc">A carabiner cut on the laser cutter &#8212; an exercise in designing a functional form with structural considerations. One of many quick-turn makerspace builds exploring what the machines can do.</p>
             <div class="pcard-tools"><span class="tool">Laser cutter</span><span class="tool">Structural design</span></div>
             <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
               <div class="pcard-thumb"><span>Photo 1</span></div><div class="pcard-thumb"><span>Photo 2</span></div>
             </div></div>
           </div>
-
+ 
+          <!-- HALLOWEEN CUTOUT -->
           <div class="pcard">
             <div class="pcard-img c6"><span>Add photo: painted photo face cutout at trick-or-treat event</span></div>
-            <div><div class="pcard-badges"><span class="badge badge-make">Makerspace</span><span class="badge badge-art">Art &amp; Design</span></div><div class="pcard-top"><div><p class="pcard-title">Halloween Photo Face Cutout</p><p class="pcard-sub">Woodshop &middot; Paint &middot; Event Prop</p></div></div></div>
-            <p class="pcard-desc">Designed, cut, and hand-painted a large photo face cutout prop for a trick-or-treat event. Built in the woodshop and painted &mdash; the kind of project that shows the range of what a makerspace can do.</p>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-make">Makerspace</span><span class="badge badge-art">Art &amp; Design</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Halloween Photo Face Cutout</p>
+                <p class="pcard-sub">Woodshop &middot; Paint &middot; Event Prop</p>
+              </div></div>
+            </div>
+            <p class="pcard-desc">Designed, cut, and hand-painted a large photo face cutout prop for a trick-or-treat event. Built in the woodshop and painted &#8212; the kind of project that shows the range of what a makerspace can do.</p>
             <div class="pcard-tools"><span class="tool">Woodshop</span><span class="tool">Painting</span><span class="tool">Event design</span></div>
             <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
               <div class="pcard-thumb"><span>Photo 1</span></div><div class="pcard-thumb"><span>Photo 2</span></div><div class="pcard-thumb"><span>Photo 3</span></div>
             </div></div>
           </div>
-
+ 
         </div>
       </div>
     </div>
-
-    <!-- CAT 3 -->
+ 
+    <!-- CAT 3: TEXTILES -->
     <div class="acc-item" id="cat-textiles">
       <div class="acc-header" data-target="cat-textiles">
         <div class="acc-header-left">
           <span class="acc-emoji">&#x1F9F5;</span>
           <div>
             <p class="acc-title">Textiles, Wearables &amp; Creative Fabrication</p>
-            <p class="acc-subtitle">Embroidery, vinyl, and soft goods &mdash; tools many makerspaces struggle to find people who understand</p>
+            <p class="acc-subtitle">Embroidery, vinyl, and soft goods &#8212; tools many makerspaces struggle to find people who understand</p>
           </div>
         </div>
         <div style="display:flex;align-items:center;gap:1rem"><span class="acc-count">3 projects</span><span class="acc-chevron">&#x25BE;</span></div>
       </div>
       <div class="acc-body">
         <div class="projects-grid">
-
+ 
+          <!-- NY LIBERTY JACKET -->
           <div class="pcard">
-            <div class="pcard-img c6"><span>Add photo: NY Liberty jacket &mdash; front embroidery + spray-painted back</span></div>
-            <div><div class="pcard-badges"><span class="badge badge-make">Makerspace</span><span class="badge badge-art">Art &amp; Design</span></div><div class="pcard-top"><div><p class="pcard-title">Custom NY Liberty Jacket</p><p class="pcard-sub">Embroidery &middot; Vinyl Stencil &middot; Spray Paint</p></div></div></div>
+            <div class="pcard-img c6"><span>Add photo: NY Liberty jacket &#8212; front embroidery + spray-painted back</span></div>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-make">Makerspace</span><span class="badge badge-art">Art &amp; Design</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Custom NY Liberty Jacket</p>
+                <p class="pcard-sub">Embroidery &middot; Vinyl Stencil &middot; Spray Paint</p>
+              </div></div>
+            </div>
             <p class="pcard-desc">Custom WNBA NY Liberty fan jacket: embroidered front logo using the embroidery machine, hand-lettered and spray-painted back using vinyl stencils cut on the Cricut. Three different making techniques in one piece.</p>
-            <div class="pcard-tools"><span class="tool">Embroidery machine</span><span class="tool">Cricut vinyl</span><span class="tool">Spray paint</span><span class="tool">Stencil design</span></div>
+            <div class="pcard-tools">
+              <span class="tool">Embroidery machine</span><span class="tool">Cricut vinyl</span><span class="tool">Spray paint</span><span class="tool">Stencil design</span><span class="tool">Sewing machine</span><span class="tool">Hand stitching</span><span class="tool">Vinyl cutter</span>
+            </div>
             <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
               <div class="pcard-thumb"><span>Photo 1</span></div><div class="pcard-thumb"><span>Photo 2</span></div><div class="pcard-thumb"><span>Photo 3</span></div><div class="pcard-thumb"><span>Photo 4</span></div>
             </div></div>
           </div>
-
+ 
+          <!-- SENIOR POLOS -->
           <div class="pcard">
             <div class="pcard-img c3"><span>Add photo: embroidered senior project polo shirts</span></div>
-            <div><div class="pcard-badges"><span class="badge badge-make">Makerspace</span><span class="badge badge-art">Art &amp; Design</span></div><div class="pcard-top"><div><p class="pcard-title">Senior Project Day Polo Shirts</p><p class="pcard-sub">Embroidery Machine</p></div></div></div>
-            <p class="pcard-desc">Embroidered custom polo shirts for the senior capstone project team using the makerspace embroidery machine. Digitizing the design for embroidery requires converting artwork into stitch paths &mdash; a different kind of engineering.</p>
-            <div class="pcard-tools"><span class="tool">Embroidery machine</span><span class="tool">Digitizing</span><span class="tool">Textile design</span></div>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-make">Makerspace</span><span class="badge badge-art">Art &amp; Design</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Senior Project Day Polo Shirts</p>
+                <p class="pcard-sub">Embroidery Machine</p>
+              </div></div>
+            </div>
+            <p class="pcard-desc">Embroidered custom polo shirts for the senior capstone project team using the makerspace embroidery machine. Digitizing the design for embroidery requires converting artwork into stitch paths &#8212; a different kind of engineering.</p>
+            <div class="pcard-tools">
+              <span class="tool">Embroidery machine</span><span class="tool">Digitizing</span><span class="tool">Textile design</span><span class="tool">Hatch</span>
+            </div>
             <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
               <div class="pcard-thumb"><span>Photo 1</span></div><div class="pcard-thumb"><span>Photo 2</span></div><div class="pcard-thumb"><span>Photo 3</span></div>
             </div></div>
           </div>
-
+ 
+          <!-- CAMP OASIS -->
           <div class="pcard">
             <div class="pcard-img c5"><span>Add photo: Camp Oasis embroidered logo piece</span></div>
-            <div><div class="pcard-badges"><span class="badge badge-make">Makerspace</span><span class="badge badge-art">Art &amp; Design</span></div><div class="pcard-top"><div><p class="pcard-title">Camp Oasis Logo Embroidery</p><p class="pcard-sub">Embroidery Machine</p></div></div></div>
-            <p class="pcard-desc">Embroidered the Camp Oasis (Crohn's &amp; Colitis Foundation) logo &mdash; combining volunteer work with makerspace skills. Logo digitized and stitched on the embroidery machine.</p>
-            <div class="pcard-tools"><span class="tool">Embroidery machine</span><span class="tool">Logo digitizing</span></div>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-make">Makerspace</span><span class="badge badge-art">Art &amp; Design</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Camp Oasis Logo Embroidery</p>
+                <p class="pcard-sub">Embroidery Machine</p>
+              </div></div>
+            </div>
+            <p class="pcard-desc">Embroidered the Camp Oasis (Crohn's &amp; Colitis Foundation) logo &#8212; combining volunteer work with makerspace skills. Logo digitized and stitched on the embroidery machine.</p>
+            <div class="pcard-tools">
+              <span class="tool">Embroidery machine</span><span class="tool">Logo digitizing</span><span class="tool">Hatch</span>
+            </div>
             <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
               <div class="pcard-thumb"><span>Photo 1</span></div><div class="pcard-thumb"><span>Photo 2</span></div><div class="pcard-thumb"><span>Photo 3</span></div>
             </div></div>
           </div>
-
+ 
         </div>
       </div>
     </div>
-
-    <!-- CAT 4 -->
+ 
+    <!-- CAT 4: DESIGN & COMMUNITY -->
     <div class="acc-item" id="cat-community">
       <div class="acc-header" data-target="cat-community">
         <div class="acc-header-left">
@@ -495,39 +641,91 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
             <p class="acc-subtitle">Teaching, outreach, and making the space better for everyone</p>
           </div>
         </div>
-        <div style="display:flex;align-items:center;gap:1rem"><span class="acc-count">4 projects</span><span class="acc-chevron">&#x25BE;</span></div>
+        <div style="display:flex;align-items:center;gap:1rem"><span class="acc-count">5 projects</span><span class="acc-chevron">&#x25BE;</span></div>
       </div>
       <div class="acc-body">
+        <!-- ROW 1: 3 cards -->
         <div class="projects-grid">
-
+ 
+          <!-- CARDBOARD BOAT -->
           <div class="pcard">
-            <div class="pcard-img c4"><span>Add photo: makerspace logo final design</span></div>
-            <div><div class="pcard-badges"><span class="badge badge-make">Makerspace</span><span class="badge badge-art">Art &amp; Design</span></div><div class="pcard-top"><div><p class="pcard-title">Fletcher Jones Foundation Makerspace &mdash; Official Logo</p><p class="pcard-sub">Brand Identity &middot; Adobe Illustrator</p></div></div></div>
-            <p class="pcard-desc">Designed the official logo for the Fletcher Jones Foundation Makerspace at the University of the Pacific &mdash; the mark that now represents the space on signage, materials, and social media. Created in Adobe Illustrator.</p>
-            <div class="pcard-tools"><span class="tool">Adobe Illustrator</span><span class="tool">Brand identity</span><span class="tool">Logo design</span></div>
+            <div class="pcard-img c7"><img src="IMG_8951.jpeg" alt="Boat Regatta Makerspace Team"></div>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-eng">Engineering</span><span class="badge badge-make">Makerspace</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Cardboard Boat Regatta</p>
+                <p class="pcard-sub">Fabrication &middot; Structural Design &middot; Community</p>
+              </div></div>
+            </div>
+            <p class="pcard-desc">Built and raced a cardboard boat. Structural design, material constraints, waterproofing strategy, and the very real consequences of getting it wrong. Engineering under pressure &#8212; literally.</p>
+            <div class="pcard-tools"><span class="tool">Cardboard fabrication</span><span class="tool">Structural design</span><span class="tool">Waterproofing</span></div>
             <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
-              <div class="pcard-thumb"><span>Logo final</span></div><div class="pcard-thumb"><span>Logo in use</span></div><div class="pcard-thumb"><span>Design process</span></div>
-            </div></div>
-            <div class="pcard-media"><p class="pcard-media-title">Documents &amp; links</p><div class="pcard-doclinks">
-              <a class="pcard-doclink" href="YOUR_ILLUSTRATOR_FILE_LINK_HERE" target="_blank"><span class="pcard-doclink-icon">&#x229E;</span>SVG file<span class="pcard-doclink-label">File</span></a>
+              <div class="pcard-thumb"><img src="IMG_8775.jpeg" alt="Boat Regatta 1"></div>
+              <div class="pcard-thumb"><img src="IMG_8212.JPG" alt="Boat Regatta 2"></div>
+              <div class="pcard-thumb"><span>Photo 3</span></div><div class="pcard-thumb"><span>Photo 4</span></div>
             </div></div>
           </div>
-
+ 
+          <!-- GHOST RACE RAMP -->
           <div class="pcard">
             <div class="pcard-img c2"><span>Add photo: race ramp + 3D printed rolling ghosts at STEAM day</span></div>
-            <div><div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div><div class="pcard-top"><div><p class="pcard-title">Ghost Race Ramp &mdash; Elementary STEAM Day</p><p class="pcard-sub">Woodshop &middot; 3D Printing &middot; Outreach</p></div></div></div>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-make">Makerspace</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Ghost Race Ramp &#8212; Elementary STEAM Day</p>
+                <p class="pcard-sub">Woodshop &middot; 3D Printing &middot; Outreach</p>
+              </div></div>
+            </div>
             <p class="pcard-desc">Built a wooden race ramp for elementary school STEAM Day, paired with 3D printed rolling ghost figures for kids to race. Designed to make physics and engineering hands-on and fun for young students.</p>
-            <div class="pcard-tools"><span class="tool">Woodshop</span><span class="tool">3D printing</span><span class="tool">STEAM outreach</span></div>
+            <div class="pcard-tools">
+              <span class="tool">Woodshop</span><span class="tool">3D printing</span><span class="tool">STEAM outreach</span><span class="tool">Community engagement</span>
+            </div>
             <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
               <div class="pcard-thumb"><span>Photo 1</span></div><div class="pcard-thumb"><span>Photo 2</span></div><div class="pcard-thumb"><span>Photo 3</span></div><div class="pcard-thumb"><span>Photo 4</span></div>
             </div></div>
           </div>
-
+ 
+          <!-- TYPES OF EVIDENCE -->
           <div class="pcard">
-            <div class="pcard-img c1"><img src="IMG_0327.PNG" alt="Custom PIES 2024 Logo"></div>
-            <div><div class="pcard-badges"><span class="badge badge-eng">Engineering</span><span class="badge badge-art">Art &amp; Design</span></div><div class="pcard-top"><div><p class="pcard-title">Pacific Innovation &amp; Entrepreneurship Summit</p><p class="pcard-sub">Event Marketing Lead &middot; 2024</p></div></div></div>
-            <p class="pcard-desc">Led the marketing team for UoP's 2024 Pacific Innovation &amp; Entrepreneurship Summit &mdash; a student-run event where engineering and business students pitch product ideas to faculty and peers. Working with a $135 budget and no social media access, the team designed custom stickers, printed and strategically placed flyers in engineering and business buildings, spray-painted the campus spirit rock outside Khoury Hall, and produced a highlight video compiled from project footage with less than a week's notice. The Makerspace hit near capacity on event day, giving every participating team maximum exposure for their ideas.</p>
-            <div class="pcard-tools"><span class="tool">Adobe CC</span><span class="tool">Team lead</span><span class="tool">Budget mgmt</span><span class="tool">Video editing</span></div>
+            <div class="pcard-img c7"><span>Add photo: physical activity materials made in the makerspace</span></div>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-make">Makerspace</span><span class="badge badge-art">Art &amp; Design</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Types of Evidence &#8212; Hands-On Activity</p>
+                <p class="pcard-sub">Course Project &middot; Makerspace-Made Materials</p>
+              </div></div>
+            </div>
+            <p class="pcard-desc">Designed and built all physical materials for a hands-on activity exploring types of legal evidence with emphasis on digital evidence. Materials were fabricated in the makerspace &#8212; the design side of engineering meets the legal concepts from the pre-law program.</p>
+            <div class="pcard-tools">
+              <span class="tool">Makerspace fabrication</span><span class="tool">Legal education</span><span class="tool">Adobe CC</span><span class="tool">Laser engraver</span><span class="tool">3D printing</span><span class="tool">Interactive learning</span>
+            </div>
+            <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
+              <div class="pcard-thumb"><span>Photo 1</span></div><div class="pcard-thumb"><span>Photo 2</span></div><div class="pcard-thumb"><span>Photo 3</span></div><div class="pcard-thumb"><span>Photo 4</span></div>
+            </div></div>
+            <div class="pcard-media"><p class="pcard-media-title">Documents &amp; links</p><div class="pcard-doclinks">
+              <a class="pcard-doclink" href="YOUR_SLIDESHOW_LINK_HERE" target="_blank"><span class="pcard-doclink-icon">&#x25FB;</span>Presentation slides<span class="pcard-doclink-label">Slides</span></a>
+              <a class="pcard-doclink" href="YOUR_REPORT_LINK_HERE" target="_blank"><span class="pcard-doclink-icon">&#x2261;</span>Activity writeup<span class="pcard-doclink-label">PDF</span></a>
+            </div></div>
+          </div>
+ 
+        </div>
+        <!-- ROW 2: 2 cards at same total width -->
+        <div class="projects-grid-2col">
+ 
+          <!-- PIES -->
+          <div class="pcard">
+            <div class="pcard-img" style="aspect-ratio:16/9;"><img src="IMG_0327.PNG" alt="Custom PIES 2024 Logo" style="object-fit:contain;object-position:center center;background:var(--bg3);"></div>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-eng">Engineering</span><span class="badge badge-art">Art &amp; Design</span><span class="badge badge-pm">Project Management</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Pacific Innovation &amp; Entrepreneurship Summit</p>
+                <p class="pcard-sub">Event Marketing Lead &middot; 2024</p>
+              </div></div>
+            </div>
+            <p class="pcard-desc">Led the marketing team for UOP's 2024 Pacific Innovation &amp; Entrepreneurship Summit &#8212; a student-run event where engineering and business students pitch product ideas to faculty and peers. Working with a $135 budget and no social media access, the team designed custom stickers, printed and strategically placed flyers in engineering and business buildings, spray-painted the campus spirit rock outside Khoury Hall, and produced a highlight video compiled from project footage with less than a week's notice. The Makerspace hit near capacity on event day, giving every participating team maximum exposure for their ideas.</p>
+            <div class="pcard-tools">
+              <span class="tool">Adobe CC</span><span class="tool">Team lead</span><span class="tool">Budget mgmt</span><span class="tool">Video editing</span><span class="tool">Marketing strategies</span>
+            </div>
             <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
               <div class="pcard-thumb"><img src="IMG_0585.PNG" alt="Banner Art"></div>
               <div class="pcard-thumb"><img src="IMG_4306.jpeg" alt="Spirit Rock Painting"></div>
@@ -539,38 +737,44 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
               <a class="pcard-doclink" href="https://docs.google.com/document/d/1OFqmmhs3l6BiKR6vHwqqP7REFomTCDoQyzlaYHu83y8/edit?usp=sharing" target="_blank"><span class="pcard-doclink-icon">&#x2261;</span>Project report<span class="pcard-doclink-label">PDF</span></a>
             </div></div>
           </div>
-
+ 
+          <!-- MAKERSPACE LOGO -->
           <div class="pcard">
-            <div class="pcard-img c7"><span>Add photo: physical activity materials made in the makerspace</span></div>
-            <div><div class="pcard-badges"><span class="badge badge-eng">Engineering</span><span class="badge badge-art">Art &amp; Design</span></div><div class="pcard-top"><div><p class="pcard-title">Types of Evidence &mdash; Hands-On Activity</p><p class="pcard-sub">Course Project &middot; Makerspace-Made Materials</p></div></div></div>
-            <p class="pcard-desc">Designed and built all physical materials for a hands-on activity exploring types of legal evidence with emphasis on digital evidence. Materials were fabricated in the makerspace &mdash; the design side of engineering meets the legal concepts from the pre-law program.</p>
-            <div class="pcard-tools"><span class="tool">Makerspace fabrication</span><span class="tool">Legal education</span><span class="tool">Adobe CC</span></div>
+            <div class="pcard-img c4"><span>Add photo: makerspace logo final design</span></div>
+            <div>
+              <div class="pcard-badges"><span class="badge badge-make">Makerspace</span><span class="badge badge-art">Art &amp; Design</span></div>
+              <div class="pcard-top"><div>
+                <p class="pcard-title">Fletcher Jones Foundation Makerspace &#8212; Official Logo</p>
+                <p class="pcard-sub">Brand Identity &middot; Adobe Illustrator</p>
+              </div></div>
+            </div>
+            <p class="pcard-desc">Designed the official logo for the Fletcher Jones Foundation Makerspace at the University of the Pacific &#8212; the mark that now represents the space on signage, materials, and social media. Created in Adobe Illustrator.</p>
+            <div class="pcard-tools"><span class="tool">Adobe Illustrator</span><span class="tool">Brand identity</span><span class="tool">Logo design</span></div>
             <div class="pcard-media"><p class="pcard-media-title">Photos</p><div class="pcard-images">
-              <div class="pcard-thumb"><span>Photo 1</span></div><div class="pcard-thumb"><span>Photo 2</span></div><div class="pcard-thumb"><span>Photo 3</span></div><div class="pcard-thumb"><span>Photo 4</span></div>
+              <div class="pcard-thumb"><span>Logo final</span></div><div class="pcard-thumb"><span>Logo in use</span></div><div class="pcard-thumb"><span>Design process</span></div>
             </div></div>
             <div class="pcard-media"><p class="pcard-media-title">Documents &amp; links</p><div class="pcard-doclinks">
-              <a class="pcard-doclink" href="YOUR_SLIDESHOW_LINK_HERE" target="_blank"><span class="pcard-doclink-icon">&#x25FB;</span>Presentation slides<span class="pcard-doclink-label">Slides</span></a>
-              <a class="pcard-doclink" href="YOUR_REPORT_LINK_HERE" target="_blank"><span class="pcard-doclink-icon">&#x2261;</span>Activity writeup<span class="pcard-doclink-label">PDF</span></a>
+              <a class="pcard-doclink" href="YOUR_ILLUSTRATOR_FILE_LINK_HERE" target="_blank"><span class="pcard-doclink-icon">&#x229E;</span>SVG file<span class="pcard-doclink-label">File</span></a>
             </div></div>
           </div>
-
+ 
         </div>
       </div>
     </div>
-
+ 
   </div>
 </section>
-
+ 
 <hr class="full-rule">
-
+ 
 <section class="section" id="about">
   <div class="s-head"><span class="s-num">About</span><h2 class="s-title">Who I <em>am</em></h2><div class="s-line"></div></div>
   <div class="about-grid">
     <div class="about-left">
       <p class="about-pull">College, Creativity, and <em>Makerspaces</em> in between.</p>
       <div class="about-body">
-        <p>I'm a Computer Engineering graduate from the University of the Pacific, heading to Northeastern University this fall to pursue an M.S. in Advanced and Intelligent Manufacturing. My work spans from embedded firmware and network security on the engineering side, to laser cutting, embroidery, woodworking, and 3D printing on the maker side &mdash; with photography and graphic design running through all of it.</p>
-        <p>I've spent the past few years working at the Fletcher Jones Foundation Makerspace at UOP &mdash; operating the equipment, training students, maintaining certifications, and building my own projects whenever I get a chance. I care about finishing things, documenting them well, and making sure the next person can pick up where I left off or repeat the project on their own.</p>
+        <p>I'm a Computer Engineering graduate from the University of the Pacific, heading to Northeastern University this fall to pursue an M.S. in Advanced and Intelligent Manufacturing. My work spans from embedded firmware and network security on the engineering side, to laser cutting, embroidery, woodworking, and 3D printing on the maker side &#8212; with photography and graphic design running through all of it.</p>
+        <p>I've spent the past few years working at the Fletcher Jones Foundation Makerspace at UOP &#8212; operating the equipment, training students, maintaining certifications, and building my own projects whenever I get a chance. I care about finishing things, documenting them well, and making sure the next person can pick up where I left off or repeat the project on their own.</p>
         <p>I'm a Girl Scout Gold Award recipient, an Alumnus Member of Theta Tau, and a volunteer counselor at Camp Oasis for the Crohn's &amp; Colitis Foundation. Whether I'm building something from scratch, working through an engineering problem, or producing media through my own small business, I bring a structured but creative approach to everything I do.</p>
       </div>
       <div style="margin-top:2rem;width:75%;aspect-ratio:1/1;overflow:hidden;border-radius:4px;margin-left:auto;margin-right:auto;">
@@ -579,9 +783,9 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
     </div>
     <div class="about-right">
       <div class="sidebar-block"><p class="sbl">Education</p><ul class="sbl-list">
-        <li>M.S. Advanced and Intelligent Manufacturing &mdash; Northeastern University (Spring 2028)</li>
-        <li>B.S. Computer Engineering &mdash; University of the Pacific (May 2026)</li>
-        <li>Pacific Legal Scholars &mdash; Experiential Honors Pre-Law Program (May 2026)</li>
+        <li>M.S. Advanced and Intelligent Manufacturing &#8212; Northeastern University (Spring 2028)</li>
+        <li>B.S. Computer Engineering &#8212; University of the Pacific (May 2026)</li>
+        <li>Pacific Legal Scholars &#8212; Experiential Honors Pre-Law Program (May 2026)</li>
       </ul></div>
       <div class="sidebar-block"><p class="sbl">Engineering skills</p><ul class="sbl-list">
         <li>Python, C/C++, Java, MATLAB, Haskell, Assembly (MIPS), SystemVerilog, HTML</li>
@@ -611,30 +815,30 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
         <li>Participant (2x), Pacific Innovation and Entrepreneurship Summit</li>
         <li>Freshman Honors Program</li>
         <li>Girl Scouts Bronze, Silver &amp; Gold Award recipient &middot; Lifetime Member</li>
-        <li>Photographic Publication (3x), Calliope Literary and Arts Magazine, UoP</li>
+        <li>Photographic Publication (3x), Calliope Literary and Arts Magazine, UOP</li>
       </ul></div>
     </div>
   </div>
 </section>
-
+ 
 <hr class="full-rule">
-
+ 
 <section class="section">
   <div class="s-head"><span class="s-num">Reviews</span><h2 class="s-title">From <em>teammates</em></h2><div class="s-line"></div></div>
   <div class="testimonials">
     <div class="tcard">
       <p class="tcard-text">"Anna took the lead on the technical side of our project, particularly with the Raspberry Pi and Python implementation. She has a remarkable ability to break down complex concepts, making sure the entire team understood how everything worked. Her contributions were key to the success of the project."</p>
-      <p class="tcard-author">Faizah Muthana &mdash; AlertMate Teammate</p>
+      <p class="tcard-author">Faizah Muthana &#8212; AlertMate Teammate</p>
     </div>
     <div class="tcard">
-      <p class="tcard-text">"Anna is an amazing artist who brought creativity and innovation to the team. She designed eye-catching stickers and compiled an engaging video featuring clips of each project. Her communication skills were outstanding &mdash; always clear, responsive, and collaborative."</p>
-      <p class="tcard-author">Colin Schneider &mdash; PIES, Lead Organizer &amp; Makerspace Co-Worker</p>
+      <p class="tcard-text">"Anna is an amazing artist who brought creativity and innovation to the team. She designed eye-catching stickers and compiled an engaging video featuring clips of each project. Her communication skills were outstanding &#8212; always clear, responsive, and collaborative."</p>
+      <p class="tcard-author">Colin Schneider &#8212; PIES, Lead Organizer &amp; Makerspace Co-Worker</p>
     </div>
   </div>
 </section>
-
+ 
 <hr class="full-rule">
-
+ 
 <section class="section" id="contact">
   <div class="contact-wrap">
     <div>
@@ -655,30 +859,37 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
     </div>
   </div>
 </section>
-
+ 
 <hr class="full-rule">
-
+ 
 <footer>
-  <p>&copy; 2026 Anna Noto</p>
+  <p>&#169; 2026 Anna Noto</p>
   <p>Built with HTML &middot; GitHub Pages &middot; annanoto.github.io</p>
 </footer>
-
+ 
 <script>
-// ACCORDION
+// ACCORDION - close others, open clicked, scroll to top of opened section
 document.querySelectorAll('.acc-header').forEach(function(header) {
   header.addEventListener('click', function() {
     var target = header.dataset.target;
     var thisItem = document.getElementById(target);
     var isOpen = thisItem.classList.contains('open');
     document.querySelectorAll('.acc-item').forEach(function(item) { item.classList.remove('open'); });
-    if (!isOpen) thisItem.classList.add('open');
+    if (!isOpen) {
+      thisItem.classList.add('open');
+      setTimeout(function() {
+        var navH = document.querySelector('nav').offsetHeight;
+        var top = thisItem.getBoundingClientRect().top + window.scrollY - navH - 12;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }, 50);
+    }
   });
 });
-
+ 
 // LIGHTBOX
 var lbImages = [];
 var lbIndex = 0;
-
+ 
 function openLightbox(src, alt, images, index) {
   lbImages = images;
   lbIndex = index;
@@ -688,21 +899,17 @@ function openLightbox(src, alt, images, index) {
   document.getElementById('lightbox').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
-
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('active');
   document.body.style.overflow = '';
 }
-
 function showLbImage(index) {
   if (lbImages.length === 0) return;
   lbIndex = (index + lbImages.length) % lbImages.length;
-  var img = lbImages[lbIndex];
-  document.getElementById('lb-img').src = img.src;
-  document.getElementById('lb-img').alt = img.alt;
-  document.getElementById('lb-caption').textContent = img.alt;
+  document.getElementById('lb-img').src = lbImages[lbIndex].src;
+  document.getElementById('lb-img').alt = lbImages[lbIndex].alt;
+  document.getElementById('lb-caption').textContent = lbImages[lbIndex].alt;
 }
-
 document.getElementById('lb-close').addEventListener('click', closeLightbox);
 document.getElementById('lb-prev').addEventListener('click', function() { showLbImage(lbIndex - 1); });
 document.getElementById('lb-next').addEventListener('click', function() { showLbImage(lbIndex + 1); });
@@ -715,7 +922,6 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'ArrowLeft') showLbImage(lbIndex - 1);
   if (e.key === 'ArrowRight') showLbImage(lbIndex + 1);
 });
-
 document.querySelectorAll('.pcard-img img, .pcard-thumb img').forEach(function(img) {
   img.addEventListener('click', function() {
     var pcard = this.closest('.pcard');
