@@ -57,15 +57,12 @@ nav{position:sticky;top:0;z-index:200;background:rgba(244,241,234,0.95);backdrop
 .hg-name{font-family:var(--serif);font-size:14px;color:#f4f1ea;line-height:1.2;margin-top:3px}
 .hg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;}
 .hg span.placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;letter-spacing:0.06em;color:var(--ink3);text-transform:uppercase;padding:12px;text-align:center;line-height:1.5;}
-/* row 1: portrait col1, portrait col2, landscape spans rows1-2 col3 */
-.hg:nth-child(1){grid-column:1;grid-row:1/2}
-.hg:nth-child(2){grid-column:2;grid-row:1/2}
-.hg:nth-child(3){grid-column:3;grid-row:1/3}
-/* row 2: portrait col1, portrait col2 — landscape col3 continues */
-.hg:nth-child(4){grid-column:1;grid-row:2/3}
-.hg:nth-child(5){grid-column:2;grid-row:2/3}
-/* row 3: landscape spans cols 1-2, portrait col3 */
-.hg:nth-child(6){grid-column:1/3;grid-row:3/4}
+.hg:nth-child(1){grid-column:1/3;grid-row:1/2}
+.hg:nth-child(2){grid-column:3;grid-row:1/3}
+.hg:nth-child(3){grid-column:1;grid-row:2/3}
+.hg:nth-child(4){grid-column:2;grid-row:2/3}
+.hg:nth-child(5){grid-column:1/2;grid-row:3/4}
+.hg:nth-child(6){grid-column:2/3;grid-row:3/4}
 .hg:nth-child(7){grid-column:3;grid-row:3/4}
 .c1{background:#d4c9b4}.c2{background:#b8c9c1}.c3{background:#ccc4b0}
 .c4{background:#c5b9a6}.c5{background:#bdc8be}.c6{background:#d0c4af}.c7{background:#c8bfad}
@@ -226,53 +223,61 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
       <a href="https://www.linkedin.com/in/anna-noto-042102" target="_blank" class="btn btn-line">LinkedIn</a>
     </div>
   </div>
+<!-- SPLASH GALLERY — replace background-color with background-image:url(...) on each .hg -->
   <div class="hero-gallery">
-    <!-- PORTRAIT 1: col 1, row 1 -->
     <div class="hg c1">
-      <span class="placeholder">Add portrait photo: cutting metal with horizontal bandsaw</span>
-      <div class="hg-overlay"><span class="hg-label">Shop Skills</span><span class="hg-name">Metal Cutting</span></div>
+      <img src="D75_9185.JPG" alt="LED display lit up">
+      <div class="hg-overlay">
+        <span class="hg-label">Engineering · Capstone</span>
+        <span class="hg-name">M.I.N.D. LED Display</span>
+      </div>
     </div>
-    <!-- PORTRAIT 2: col 2, row 1 -->
-    <div class="hg c3">
-      <span class="placeholder">Add portrait photo: spot welding</span>
-      <div class="hg-overlay"><span class="hg-label">Sheet Metal</span><span class="hg-name">Spot Welding</span></div>
-    </div>
-    <!-- LANDSCAPE 1: col 3, spans rows 1-2 -->
     <div class="hg c2">
-      <span class="placeholder">Add landscape photo: controlling the CNC in the woodshop</span>
-      <div class="hg-overlay"><span class="hg-label">Digital Fabrication</span><span class="hg-name">CNC Woodshop</span></div>
+      <span class="placeholder">Add photo: Travel treasures box with living hinges</span>
+      <div class="hg-overlay">
+        <span class="hg-label">Laser cut · Wood</span>
+        <span class="hg-name">Travel Treasures Box</span>
+      </div>
     </div>
-    <!-- PORTRAIT 3: col 1, row 2 -->
+    <div class="hg c3">
+      <span class="placeholder">Add photo: NY Liberty embroidered jacket</span>
+      <div class="hg-overlay">
+        <span class="hg-label">Embroidery · Vinyl</span>
+        <span class="hg-name">NY Liberty Jacket</span>
+      </div>
+    </div>
     <div class="hg c4">
-      <span class="placeholder">Add portrait photo: bending sheet metal</span>
-      <div class="hg-overlay"><span class="hg-label">Fabrication</span><span class="hg-name">Sheet Metal Bending</span></div>
+      <span class="placeholder">Add photo: Elephant tray</span>
+      <div class="hg-overlay">
+        <span class="hg-label">CNC · Woodshop</span>
+        <span class="hg-name">Elephant Tray</span>
+      </div>
     </div>
-    <!-- PORTRAIT 4: col 2, row 2 -->
-    <div class="hg c7">
-      <span class="placeholder">Add portrait photo: repairing the cardboard boat</span>
-      <div class="hg-overlay"><span class="hg-label">Fabrication</span><span class="hg-name">Cardboard Boat Repair</span></div>
-    </div>
-    <!-- LANDSCAPE 2: cols 1-2, row 3 -->
     <div class="hg c5">
-      <span class="placeholder">Add landscape photo: building the LED board</span>
-      <div class="hg-overlay"><span class="hg-label">Engineering</span><span class="hg-name">Building M.I.N.D.</span></div>
+      <span class="placeholder">Add photo: Humidifier stool</span>
+      <div class="hg-overlay">
+        <span class="hg-label">Sheet metal · CAD</span>
+        <span class="hg-name">Humidifier Stool</span>
+      </div>
     </div>
-    <!-- LANDSCAPE 3: col 3, row 3 -->
     <div class="hg c6">
-      <span class="placeholder">Add landscape photo: attending Maker Faire</span>
-      <div class="hg-overlay"><span class="hg-label">Community</span><span class="hg-name">Maker Faire</span></div>
+      <img src="IMG_5157.JPG" alt="AlertMate Functional Prototype">
+      <div class="hg-overlay">
+        <span class="hg-label">Electronics · Entrepreneurship</span>
+        <span class="hg-name">AlertMate Functional Prototype</span>
+      </div>
+    </div>
+    <div class="hg c7">
+      <span class="placeholder">Add photo: cardboard boat regatta</span>
+      <div class="hg-overlay">
+        <span class="hg-label">Fabrication · Fun</span>
+        <span class="hg-name">Cardboard Boat Regatta</span>
+      </div>
     </div>
   </div>
 </div>
- 
+
 <hr class="full-rule">
- 
-<section class="section" id="work">
-  <div class="s-head">
-    <span class="s-num">All projects</span>
-    <h2 class="s-title">Engineering <em>&amp;</em> Making</h2>
-    <div class="s-line"></div>
-  </div>
  
   <div class="accordion">
  
