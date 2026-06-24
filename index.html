@@ -904,7 +904,8 @@ document.querySelectorAll('.acc-header').forEach(function(header) {
       thisItem.classList.add('open');
       setTimeout(function() {
         var navH = document.querySelector('nav').offsetHeight;
-        var top = thisItem.getBoundingClientRect().top + window.scrollY - navH - 12;
+        var workSection = document.getElementById('work');
+        var top = workSection.getBoundingClientRect().top + window.scrollY - navH - 12;
         window.scrollTo({ top: top, behavior: 'smooth' });
       }, 50);
     }
