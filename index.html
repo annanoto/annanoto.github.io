@@ -161,6 +161,10 @@ nav{position:sticky;top:0;z-index:200;background:rgba(244,241,234,0.95);backdrop
 .clink-val{font-size:0.9rem;color:var(--ink)}
 .clink-arr{font-size:18px;color:var(--teal)}
 .contact-sidebar{background:var(--bg2);border:1px solid var(--rule);border-radius:var(--r);padding:2rem}
+.cert-badge{display:inline-flex;flex-direction:column;gap:10px;margin-top:2rem;}
+.cert-badge-label{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);}
+.cert-badge img{width:150px;height:auto;object-fit:contain;transition:transform .15s;}
+.cert-badge:hover img{transform:scale(1.04);}
 footer{border-top:1px solid var(--rule);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;max-width:1400px;margin:0 auto}
 footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(--ink3)}
 @media(max-width:680px){
@@ -891,6 +895,10 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
         <a href="https://www.linkedin.com/in/anna-noto-042102" target="_blank" class="clink"><div><p class="clink-type">LinkedIn</p><p class="clink-val">anna-noto-042102</p></div><span class="clink-arr">&#x2192;</span></a>
         <a href="https://github.com/annanoto" target="_blank" class="clink"><div><p class="clink-type">GitHub</p><p class="clink-val">github.com/annanoto</p></div><span class="clink-arr">&#x2192;</span></a>
       </div>
+      <a class="cert-badge" href="https://certificates.iise.org/8e0345cf-7140-49b1-9050-e7e9a4f0263f" target="_blank" rel="noopener">
+        <span class="cert-badge-label">Verified credential</span>
+        <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/197636318" alt="IISE Six Sigma Green Belt badge. Click to verify.">
+      </a>
     </div>
     <div class="contact-sidebar">
       <div class="sidebar-block"><p class="sbl">Location</p><ul class="sbl-list">
