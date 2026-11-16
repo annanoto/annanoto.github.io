@@ -32,7 +32,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(244,241,234,0.95);backdrop
 .nav-links a{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink3);transition:color .15s}
 .nav-links a:hover{color:var(--teal)}
 /* HERO */
-.hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 58px);max-width:1400px;margin:0 auto;}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:calc(100vh - 58px);max-width:1400px;margin:0 auto;}
 .hero-left{padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--rule);}
 .hero-kicker{display:flex;align-items:center;gap:10px;margin-bottom:2rem;}
 .hero-kicker span{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal)}
@@ -49,6 +49,8 @@ nav{position:sticky;top:0;z-index:200;background:rgba(244,241,234,0.95);backdrop
 .btn-dark:hover{background:var(--teal);border-color:var(--teal)}
 .btn-line{background:transparent;color:var(--ink);border-color:var(--rule)}
 .btn-line:hover{border-color:var(--ink2)}
+.btn-teal{background:var(--teal);color:var(--bg);border-color:var(--teal)}
+.btn-teal:hover{background:var(--ink);border-color:var(--ink)}
 /* HERO GALLERY */
 .hero-gallery{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr 1fr;height:calc(100vh - 58px);gap:3px;background:var(--rule);}
 .hg{background:var(--bg3);overflow:hidden;position:relative;cursor:pointer}
@@ -226,7 +228,7 @@ footer p{font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(
     </div>
     <div class="hero-btns">
       <a href="#work" class="btn btn-dark">See projects</a>
-      <a href="#contact" class="btn btn-dark">Work with me</a>
+      <a href="#contact" class="btn btn-teal">Work with me</a>
       <a href="https://github.com/annanoto" target="_blank" class="btn btn-line">GitHub</a>
       <a href="https://www.linkedin.com/in/anna-noto-042102" target="_blank" class="btn btn-line">LinkedIn</a>
     </div>
